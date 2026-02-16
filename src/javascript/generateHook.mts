@@ -19,6 +19,7 @@ const ALLOWED_PAGE_PARAM_NAMES = ["page", "pageno", "pagenumber", "offset"];
 type HookContext = {
   config: Config;
   hasInfiniteQuery: boolean;
+  hasSuspenseQuery: boolean;
   hasMutationWithoutVariables: boolean;
 };
 
@@ -31,6 +32,7 @@ function generateHook(
     const context: HookContext = {
       config,
       hasInfiniteQuery: !!config.useInfiniteQuery?.length,
+      hasSuspenseQuery: !!config.useSuspenseQuery?.length,
       hasMutationWithoutVariables: false,
     };
 
@@ -53,13 +55,14 @@ function generateHook(
 function generateSingleHook(api: ApiAST, context: HookContext): string {
   const hookName = `use${toPascalCase(api.serviceName)}`;
   const isInfiniteQuery = shouldUseInfiniteQuery(api, hookName, context);
-  const isQuery = isInfiniteQuery || shouldUseQuery(api, hookName, context);
+  const isSuspenseQuery = shouldUseSuspenseQuery(api, hookName, context);
+  const isQuery = isInfiniteQuery || isSuspenseQuery || shouldUseQuery(api, hookName, context);
 
-  const hookConfig = buildHookConfig(api, isQuery, isInfiniteQuery, context);
+  const hookConfig = buildHookConfig(api, isQuery, isInfiniteQuery, isSuspenseQuery, context);
 
   let code = generateHookJsDoc(api);
   code += generateHookSignature(hookName, isQuery, hookConfig);
-  code += generateHookBody(api, hookName, isQuery, isInfiniteQuery, hookConfig);
+  code += generateHookBody(api, hookName, isQuery, isInfiniteQuery, isSuspenseQuery, hookConfig);
 
   if (isQuery) {
     code += generateInfoMethod(api, hookName, isInfiniteQuery, hookConfig);
@@ -74,6 +77,7 @@ function buildHookConfig(
   api: ApiAST,
   isQuery: boolean,
   isInfiniteQuery: boolean,
+  isSuspenseQuery: boolean,
   context: HookContext,
 ) {
   const TData = api.responses
@@ -86,6 +90,7 @@ function buildHookConfig(
     api,
     isQuery,
     isInfiniteQuery,
+    isSuspenseQuery,
     TData,
     TQueryFnData,
     TError,
@@ -97,6 +102,7 @@ function buildHookConfig(
       api,
       isQuery,
       isInfiniteQuery,
+      isSuspenseQuery,
       TData,
       TQueryFnData,
       TError,
@@ -129,6 +135,19 @@ function shouldUseQuery(
   }
 
   return !!context.config.useQuery?.find(
+    (name) =>
+      name.toLowerCase() === api.serviceName.toLowerCase() ||
+      name.toLowerCase() === hookName.toLowerCase(),
+  );
+}
+
+/** Check if hook should use suspense query */
+function shouldUseSuspenseQuery(
+  api: ApiAST,
+  hookName: string,
+  context: HookContext,
+): boolean {
+  return !!context.config.useSuspenseQuery?.find(
     (name) =>
       name.toLowerCase() === api.serviceName.toLowerCase() ||
       name.toLowerCase() === hookName.toLowerCase(),
@@ -233,6 +252,7 @@ function buildHookParams(
   api: ApiAST,
   isQuery: boolean,
   isInfiniteQuery: boolean,
+  isSuspenseQuery: boolean,
   TData: string,
   TQueryFnData: string,
   TError: string,
@@ -244,6 +264,7 @@ function buildHookParams(
     const variables = buildVariables(api, {
       config: {} as Config,
       hasInfiniteQuery: false,
+      hasSuspenseQuery: false,
       hasMutationWithoutVariables: false,
     });
     if (variables.length > 0) {
@@ -255,12 +276,15 @@ function buildHookParams(
   let optionsType: string;
   if (isInfiniteQuery) {
     optionsType = `UseInfiniteQueryOptions<${TQueryFnData}, ${TError}>`;
+  } else if (isSuspenseQuery) {
+    optionsType = `SwaggerTypescriptUseSuspenseQueryOptions<${TData}>`;
   } else if (isQuery) {
     optionsType = `SwaggerTypescriptUseQueryOptions<${TData}>`;
   } else {
     const variables = buildVariables(api, {
       config: {} as Config,
       hasInfiniteQuery: false,
+      hasSuspenseQuery: false,
       hasMutationWithoutVariables: false,
     });
     if (variables?.length > 0) {
@@ -305,10 +329,11 @@ function generateHookBody(
   hookName: string,
   isQuery: boolean,
   isInfiniteQuery: boolean,
+  isSuspenseQuery: boolean,
   config: any,
 ): string {
   if (isQuery) {
-    return generateQueryHookBody(api, hookName, isInfiniteQuery, config);
+    return generateQueryHookBody(api, hookName, isInfiniteQuery, isSuspenseQuery, config);
   }
   return generateMutationHookBody(api, config);
 }
@@ -318,6 +343,7 @@ function generateQueryHookBody(
   api: ApiAST,
   hookName: string,
   isInfiniteQuery: boolean,
+  isSuspenseQuery: boolean,
   config: any,
 ): string {
   let code = `
@@ -346,6 +372,14 @@ function generateQueryHookBody(
       const hasMore = useHasMore(pages, list, queryParams);
       
       return { ...rest, data, list, hasMore, total };
+    `;
+  } else if (isSuspenseQuery) {
+    code += `
+      return useSuspenseQuery({
+        queryKey: key,
+        queryFn: fun,
+        ...options
+      });
     `;
   } else {
     code += `
@@ -451,7 +485,10 @@ function buildFinalCode(
   apis: ApiAST[],
   context: HookContext,
 ): string {
-  let code = getHooksImports({ hasInfinity: context.hasInfiniteQuery });
+  let code = getHooksImports({ 
+    hasInfinity: context.hasInfiniteQuery,
+    hasSuspense: context.hasSuspenseQuery
+  });
 
   // Add type imports
   code += buildTypeImports(types, apisCode);
@@ -473,6 +510,13 @@ function buildFinalCode(
       TRequest & SwaggerTypescriptMutationDefaultParams<TExtra>
     >;
   `;
+
+  // Add SwaggerTypescriptUseSuspenseQueryOptions only if needed
+  if (context.hasSuspenseQuery) {
+    code += `
+    type SwaggerTypescriptUseSuspenseQueryOptions<TData> = Omit<UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>, "queryKey">;
+  `;
+  }
 
   // Add SwaggerTypescriptUseMutationOptionsVoid only if needed
   if (context.hasMutationWithoutVariables) {
