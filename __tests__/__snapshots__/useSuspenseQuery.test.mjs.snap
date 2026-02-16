@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useSuspenseQuery should generate useSuspenseQuery hooks for configured endpoints: useSuspenseQuery hooks 1`] = `
+"//@ts-nocheck
+/**
+ * AUTO_GENERATED Do not change this file directly, use config.ts file instead
+ *
+ * @version 6
+ */
+
+import { AxiosRequestConfig } from \\"axios\\";
+import {
+  UseQueryOptions,
+  useQuery,
+  useMutation,
+  UseMutationOptions,
+  useSuspenseQuery,
+  UseSuspenseQueryOptions,
+  QueryClient,
+  QueryKey,
+} from \\"@tanstack/react-query\\";
+import { RequestError, SwaggerResponse } from \\"./config\\";
+
+import type { CreateOrderInput, Order, Product, User } from \\"./types\\";
+import { getProducts, getProductsId, getUsersId, postOrders } from \\"./services\\";
+
+export type SwaggerTypescriptMutationDefaultParams<TExtra> = {
+  _extraVariables?: TExtra;
+  configOverride?: AxiosRequestConfig;
+};
+type SwaggerTypescriptUseQueryOptions<TData> = Omit<
+  UseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
+  \\"queryKey\\"
+>;
+
+type SwaggerTypescriptUseMutationOptions<TData, TRequest, TExtra> =
+  UseMutationOptions<
+    SwaggerResponse<TData>,
+    RequestError | Error,
+    TRequest & SwaggerTypescriptMutationDefaultParams<TExtra>
+  >;
+
+type SwaggerTypescriptUseSuspenseQueryOptions<TData> = Omit<
+  UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
+  \\"queryKey\\"
+>;
+export const useGetProducts = (
+  options?: SwaggerTypescriptUseSuspenseQueryOptions<Product[]>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetProducts.info(configOverride);
+
+  return useSuspenseQuery({
+    queryKey: key,
+    queryFn: fun,
+    ...options,
+  });
+};
+useGetProducts.info = (configOverride?: AxiosRequestConfig) => {
+  return {
+    key: [getProducts.key] as QueryKey,
+    fun: () => getProducts(configOverride),
+  };
+};
+useGetProducts.prefetch = (
+  client: QueryClient,
+  options?: SwaggerTypescriptUseSuspenseQueryOptions<Product[]>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetProducts.info(configOverride);
+
+  return client.getQueryData(key)
+    ? Promise.resolve()
+    : client.prefetchQuery({
+        queryKey: key,
+        queryFn: () => fun(),
+        ...options,
+      });
+};
+export const useGetProductsId = (
+  id: string,
+  options?: SwaggerTypescriptUseQueryOptions<Product>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetProductsId.info(id, configOverride);
+
+  return useQuery({
+    queryKey: key,
+    queryFn: fun,
+    ...options,
+  });
+};
+useGetProductsId.info = (id: string, configOverride?: AxiosRequestConfig) => {
+  return {
+    key: [getProductsId.key, id] as QueryKey,
+    fun: () => getProductsId(id, configOverride),
+  };
+};
+useGetProductsId.prefetch = (
+  client: QueryClient,
+  id: string,
+  options?: SwaggerTypescriptUseQueryOptions<Product>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetProductsId.info(id, configOverride);
+
+  return client.getQueryData(key)
+    ? Promise.resolve()
+    : client.prefetchQuery({
+        queryKey: key,
+        queryFn: () => fun(),
+        ...options,
+      });
+};
+export const useGetUsersId = (
+  id: string,
+  options?: SwaggerTypescriptUseSuspenseQueryOptions<User>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetUsersId.info(id, configOverride);
+
+  return useSuspenseQuery({
+    queryKey: key,
+    queryFn: fun,
+    ...options,
+  });
+};
+useGetUsersId.info = (id: string, configOverride?: AxiosRequestConfig) => {
+  return {
+    key: [getUsersId.key, id] as QueryKey,
+    fun: () => getUsersId(id, configOverride),
+  };
+};
+useGetUsersId.prefetch = (
+  client: QueryClient,
+  id: string,
+  options?: SwaggerTypescriptUseSuspenseQueryOptions<User>,
+  configOverride?: AxiosRequestConfig,
+) => {
+  const { key, fun } = useGetUsersId.info(id, configOverride);
+
+  return client.getQueryData(key)
+    ? Promise.resolve()
+    : client.prefetchQuery({
+        queryKey: key,
+        queryFn: () => fun(),
+        ...options,
+      });
+};
+export const usePostOrders = <TExtra,>(
+  options?: SwaggerTypescriptUseMutationOptions<
+    Order,
+    { requestBody: CreateOrderInput },
+    TExtra
+  >,
+) => {
+  return useMutation({
+    mutationFn: (_o) => {
+      const { requestBody, configOverride } = _o || {};
+      return postOrders(requestBody, configOverride);
+    },
+    ...options,
+  });
+};
+"
+`;
