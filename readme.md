@@ -14,7 +14,11 @@ Supported
 
 - Generating a function for every apis
 - Generating all types, interfaces and enums which used in apis
-- React hooks.
+- React hooks with support for:
+  - `useQuery` and `useMutation` hooks
+  - `useInfiniteQuery` for pagination
+  - `useSuspenseQuery` for automatic suspense mode
+  - `useSuspenseInfiniteQuery` for suspense + pagination
 - SignalR hub.
 - Generating mock data.
 
@@ -80,24 +84,26 @@ For Example:
 }
 ```
 
-| [`Key`]              | [`default`]            | Comment                                                                                                                                                                                                                                        |
-| -------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `url`                | Required               | swagger or postman collection Address. can be online or local (json/yaml) ([specific branch](#specific-branch))                                                                                                                                |
-| `dir`                | Required               | Address of output                                                                                                                                                                                                                              |
-| `language`           | `typescript`           | export to "javascript", "typescript" or "kotlin"                                                                                                                                                                                               |
-| `methodName`         | `{method}{path}`       | Supported mixed of "{method}{path}{operationId}". for Example: 'service{method}{path}'                                                                                                                                                         |
-| `prefix`             | Optional               | prefix value will be removed from method name For example your endpoints is like "/api/v2/users", If you don't want add "/api/v2" to method name, add it to prefix                                                                             |
-| `ignore`             | Optional               | Ignore headers from type for Example: `"ignore": { "headerParams": ["terminalId"]}`                                                                                                                                                            |
-| `mock`               | false                  | For generate response mocks                                                                                                                                                                                                                    |
-| `keepJson`           | false                  | This code will keep previous JSON for updating partially. change it to true then generate service for creating your first json file then you can update a tag for example `$ yarn swag-ts User` will update your user APIs which have User tag |
-| `reactHooks`         | false                  | For generate react hooks of all APIs (using react-query under the hood)                                                                                                                                                                        |
-| `useQuery`           | []                     | List of apis which is get but developed with post methods (Is useful for rest apis) for Example: ["postTicketsGetall"] (Needed to enable `reactHooks`)                                                                                         |
-| `useInfiniteQuery`   | []                     | List of apis which is get and could be handle infinity (Needed to enable `reactHooks`) parameter should be one of `page`, `pageNo` or `pageNumber`                                                                                             |
-| `local`              | false                  | update swagger with local swagger.json located in your dir folder. add it to your config file or run it with cli `$ yarn swag-ts --local`                                                                                                      |
-| `kotlinPackage`      | Required (Only kotlin) | package name of source dir                                                                                                                                                                                                                     |
-| `generateEnumAsType` | false                  |
-| `includes`           | []                     | A list of regex patterns that specify which APIs to include based on matching method names                                                                                                                                                     |
-| `excludes`           | []                     | A list of regex patterns that specify which APIs to exclude based on matching method names                                                                                                                                                     |
+| [`Key`]                      | [`default`]            | Comment                                                                                                                                                                                                                                        |
+| ---------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `url`                        | Required               | swagger or postman collection Address. can be online or local (json/yaml) ([specific branch](#specific-branch))                                                                                                                                |
+| `dir`                        | Required               | Address of output                                                                                                                                                                                                                              |
+| `language`                   | `typescript`           | export to "javascript", "typescript" or "kotlin"                                                                                                                                                                                               |
+| `methodName`                 | `{method}{path}`       | Supported mixed of "{method}{path}{operationId}". for Example: 'service{method}{path}'                                                                                                                                                         |
+| `prefix`                     | Optional               | prefix value will be removed from method name For example your endpoints is like "/api/v2/users", If you don't want add "/api/v2" to method name, add it to prefix                                                                             |
+| `ignore`                     | Optional               | Ignore headers from type for Example: `"ignore": { "headerParams": ["terminalId"]}`                                                                                                                                                            |
+| `mock`                       | false                  | For generate response mocks                                                                                                                                                                                                                    |
+| `keepJson`                   | false                  | This code will keep previous JSON for updating partially. change it to true then generate service for creating your first json file then you can update a tag for example `$ yarn swag-ts User` will update your user APIs which have User tag |
+| `reactHooks`                 | false                  | For generate react hooks of all APIs (using react-query under the hood)                                                                                                                                                                        |
+| `useQuery`                   | []                     | List of apis which is get but developed with post methods (Is useful for rest apis) for Example: ["postTicketsGetall"] (Needed to enable `reactHooks`)                                                                                         |
+| `useInfiniteQuery`           | []                     | List of apis which is get and could be handle infinity (Needed to enable `reactHooks`) parameter should be one of `page`, `pageNo` or `pageNumber`                                                                                             |
+| `useSuspenseQuery`           | []                     | List of apis to generate with React Query's `useSuspenseQuery` for automatic suspense mode (Needed to enable `reactHooks`) [See React Query Suspense](#react-query-suspense)                                                                   |
+| `useSuspenseInfiniteQuery`   | []                     | List of apis to generate with React Query's `useSuspenseInfiniteQuery` for suspense + infinite queries (Needed to enable `reactHooks`) [See React Query Suspense](#react-query-suspense)                                                       |
+| `local`                      | false                  | update swagger with local swagger.json located in your dir folder. add it to your config file or run it with cli `$ yarn swag-ts --local`                                                                                                      |
+| `kotlinPackage`              | Required (Only kotlin) | package name of source dir                                                                                                                                                                                                                     |
+| `generateEnumAsType`         | false                  |
+| `includes`                   | []                     | A list of regex patterns that specify which APIs to include based on matching method names                                                                                                                                                     |
+| `excludes`                   | []                     | A list of regex patterns that specify which APIs to exclude based on matching method names                                                                                                                                                     |
 
 - `enum ReferralStatus {Successed="Successed","Error"="Error"} `
 - `type ReferralStatus="Successed" | "Error"; // generateEnumAsType = true `
@@ -196,6 +202,80 @@ For Example:
 ```
 
 to generate swagger for develop run `yarn swag-ts --branch=develop` or your branch name should be `develop` or a branch which created from develop
+
+## React Query Suspense
+
+When using `reactHooks: true`, you can generate hooks using React Query's Suspense features. This requires `@tanstack/react-query` v5 or higher.
+
+### Configuration Options
+
+You can configure which endpoints generate suspense-enabled hooks:
+
+```json
+{
+  "reactHooks": true,
+  "useSuspenseQuery": ["getUserById", "getProducts"],
+  "useSuspenseInfiniteQuery": ["getProductList"]
+}
+```
+
+### Hook Types
+
+#### `useSuspenseQuery`
+
+Generates hooks using React Query's `useSuspenseQuery` for automatic suspense mode. These hooks will suspend the component while loading and throw errors to the nearest error boundary.
+
+```typescript
+// Generated hook
+const { data } = useGetUserById(userId);
+// No need to check for loading state - component suspends automatically
+```
+
+#### `useSuspenseInfiniteQuery`
+
+Generates hooks using React Query's `useSuspenseInfiniteQuery` for suspense mode with infinite/pagination queries.
+
+```typescript
+// Generated hook
+const { data, list, hasMore, fetchNextPage } = useGetProductList(filters);
+// Automatically handles suspense + pagination
+```
+
+### Usage with Suspense Boundaries
+
+```tsx
+import { Suspense } from 'react';
+import { useGetUserById } from './services/hooks';
+
+function UserProfile({ userId }) {
+  // This hook uses useSuspenseQuery - no loading state needed
+  const { data: user } = useGetUserById(userId);
+  
+  return <div>{user.name}</div>;
+}
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <UserProfile userId={123} />
+    </Suspense>
+  );
+}
+```
+
+### Combining Different Hook Types
+
+You can mix different hook types in the same configuration:
+
+```json
+{
+  "reactHooks": true,
+  "useQuery": ["postSearch"],                    // Regular query
+  "useInfiniteQuery": ["getOrders"],            // Regular infinite query
+  "useSuspenseQuery": ["getUserById"],          // Suspense query
+  "useSuspenseInfiniteQuery": ["getProducts"]   // Suspense + infinite query
+}
+```
 
 ## Stories
 
