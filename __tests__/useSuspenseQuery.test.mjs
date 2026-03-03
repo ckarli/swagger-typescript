@@ -312,7 +312,7 @@ describe("useSuspenseQuery", () => {
     expect(ordersHookMatch).toBeTruthy();
   }, 10000);
 
-  test("should generate useSuspenseInfiniteQuery when endpoint is in both useSuspenseQuery and useInfiniteQuery", async () => {
+  test("should generate useSuspenseInfiniteQuery when endpoint is configured", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -320,8 +320,7 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getProducts"],
-        useInfiniteQuery: ["getProducts"],
+        useSuspenseInfiniteQuery: ["getProducts"],
       },
       swaggerJson,
     );
@@ -343,7 +342,7 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toMatchSnapshot("useSuspenseInfiniteQuery hooks");
   }, 10000);
 
-  test("should use useSuspenseInfiniteQuery for multiple endpoints configured in both arrays", async () => {
+  test("should support mixing useSuspenseInfiniteQuery and useSuspenseQuery", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -351,8 +350,8 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getProducts", "getUsersId"],
-        useInfiniteQuery: ["getProducts"],
+        useSuspenseQuery: ["getUsersId"],
+        useSuspenseInfiniteQuery: ["getProducts"],
       },
       swaggerJson,
     );

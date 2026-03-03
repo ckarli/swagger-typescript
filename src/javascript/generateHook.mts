@@ -34,7 +34,7 @@ function generateHook(
       config,
       hasInfiniteQuery: !!config.useInfiniteQuery?.length,
       hasSuspenseQuery: !!config.useSuspenseQuery?.length,
-      hasSuspenseInfiniteQuery: false,
+      hasSuspenseInfiniteQuery: !!config.useSuspenseInfiniteQuery?.length,
       hasMutationWithoutVariables: false,
     };
 
@@ -58,13 +58,8 @@ function generateSingleHook(api: ApiAST, context: HookContext): string {
   const hookName = `use${toPascalCase(api.serviceName)}`;
   const isInfiniteQuery = shouldUseInfiniteQuery(api, hookName, context);
   const isSuspenseQuery = shouldUseSuspenseQuery(api, hookName, context);
-  const isSuspenseInfiniteQuery = isInfiniteQuery && isSuspenseQuery;
-  const isQuery = isInfiniteQuery || isSuspenseQuery || shouldUseQuery(api, hookName, context);
-
-  // Mark that we have suspense infinite queries
-  if (isSuspenseInfiniteQuery) {
-    context.hasSuspenseInfiniteQuery = true;
-  }
+  const isSuspenseInfiniteQuery = shouldUseSuspenseInfiniteQuery(api, hookName, context);
+  const isQuery = isInfiniteQuery || isSuspenseQuery || isSuspenseInfiniteQuery || shouldUseQuery(api, hookName, context);
 
   const hookConfig = buildHookConfig(api, isQuery, isInfiniteQuery, isSuspenseQuery, isSuspenseInfiniteQuery, context);
 
@@ -159,6 +154,19 @@ function shouldUseSuspenseQuery(
   context: HookContext,
 ): boolean {
   return !!context.config.useSuspenseQuery?.find(
+    (name) =>
+      name.toLowerCase() === api.serviceName.toLowerCase() ||
+      name.toLowerCase() === hookName.toLowerCase(),
+  );
+}
+
+/** Check if hook should use suspense infinite query */
+function shouldUseSuspenseInfiniteQuery(
+  api: ApiAST,
+  hookName: string,
+  context: HookContext,
+): boolean {
+  return !!context.config.useSuspenseInfiniteQuery?.find(
     (name) =>
       name.toLowerCase() === api.serviceName.toLowerCase() ||
       name.toLowerCase() === hookName.toLowerCase(),

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useSuspenseQuery should generate useSuspenseInfiniteQuery when endpoint is in both useSuspenseQuery and useInfiniteQuery: useSuspenseInfiniteQuery hooks 1`] = `
+exports[`useSuspenseQuery should generate useSuspenseInfiniteQuery when endpoint is configured: useSuspenseInfiniteQuery hooks 1`] = `
 "//@ts-nocheck
 /**
  * AUTO_GENERATED Do not change this file directly, use config.ts file instead
@@ -15,10 +15,6 @@ import {
   useQuery,
   useMutation,
   UseMutationOptions,
-  useInfiniteQuery,
-  UseInfiniteQueryOptions,
-  useSuspenseQuery,
-  UseSuspenseQueryOptions,
   useSuspenseInfiniteQuery,
   UseSuspenseInfiniteQueryOptions,
   QueryClient,
@@ -78,11 +74,6 @@ type SwaggerTypescriptUseMutationOptions<TData, TRequest, TExtra> =
     RequestError | Error,
     TRequest & SwaggerTypescriptMutationDefaultParams<TExtra>
   >;
-
-type SwaggerTypescriptUseSuspenseQueryOptions<TData> = Omit<
-  UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
-  \\"queryKey\\"
->;
 export const useGetProducts = (
   queryParams?: GetProductsQueryParams,
   options?: UseSuspenseInfiniteQueryOptions<

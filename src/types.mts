@@ -268,6 +268,7 @@ export interface FileConfig {
   useQuery?: string[];
   useInfiniteQuery?: string[];
   useSuspenseQuery?: string[];
+  useSuspenseInfiniteQuery?: string[];
   mock?: string;
   prettierPath?: string;
   language?: "javascript" | "typescript" | "kotlin";
