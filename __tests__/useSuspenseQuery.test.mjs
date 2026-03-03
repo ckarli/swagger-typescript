@@ -39,6 +39,24 @@ const swaggerJson = {
       "get": {
         "tags": ["Products"],
         "operationId": "Products_GetAll",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -292,5 +310,63 @@ describe("useSuspenseQuery", () => {
     // Verify postOrders uses useQuery (not mutation)
     const ordersHookMatch = hooks.match(/export const usePostOrders[\s\S]*?return useQuery/);
     expect(ordersHookMatch).toBeTruthy();
+  }, 10000);
+
+  test("should generate useSuspenseInfiniteQuery when endpoint is in both useSuspenseQuery and useInfiniteQuery", async () => {
+    const {
+      "hooks.ts": hooks,
+    } = await generator(
+      {
+        url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
+        dir: "./__tests__/outputs/useSuspenseQuery",
+        reactHooks: true,
+        useSuspenseQuery: ["getProducts"],
+        useInfiniteQuery: ["getProducts"],
+      },
+      swaggerJson,
+    );
+
+    // Verify useSuspenseInfiniteQuery is imported
+    expect(hooks).toContain("useSuspenseInfiniteQuery");
+    expect(hooks).toContain("UseSuspenseInfiniteQueryOptions");
+    
+    // Verify getProducts uses useSuspenseInfiniteQuery
+    const productsHookMatch = hooks.match(/export const useGetProducts[\s\S]*?useSuspenseInfiniteQuery\(/);
+    expect(productsHookMatch).toBeTruthy();
+    
+    // Verify it includes infinite query features (pagination helpers)
+    expect(hooks).toContain("paginationFlattenData");
+    expect(hooks).toContain("getTotal");
+    expect(hooks).toContain("useHasMore");
+    
+    // Snapshot test
+    expect(hooks).toMatchSnapshot("useSuspenseInfiniteQuery hooks");
+  }, 10000);
+
+  test("should use useSuspenseInfiniteQuery for multiple endpoints configured in both arrays", async () => {
+    const {
+      "hooks.ts": hooks,
+    } = await generator(
+      {
+        url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
+        dir: "./__tests__/outputs/useSuspenseQuery",
+        reactHooks: true,
+        useSuspenseQuery: ["getProducts", "getUsersId"],
+        useInfiniteQuery: ["getProducts"],
+      },
+      swaggerJson,
+    );
+
+    // Verify both types of hooks are generated
+    expect(hooks).toContain("useSuspenseInfiniteQuery");
+    expect(hooks).toContain("useSuspenseQuery");
+    
+    // Verify getProducts uses useSuspenseInfiniteQuery
+    const productsHookMatch = hooks.match(/export const useGetProducts[\s\S]*?useSuspenseInfiniteQuery\(/);
+    expect(productsHookMatch).toBeTruthy();
+    
+    // Verify getUsersId uses useSuspenseQuery (not infinite)
+    const usersHookMatch = hooks.match(/export const useGetUsersId[\s\S]*?return useSuspenseQuery/);
+    expect(usersHookMatch).toBeTruthy();
   }, 10000);
 });
