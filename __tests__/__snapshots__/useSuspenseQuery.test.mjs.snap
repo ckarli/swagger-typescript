@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useSuspenseQuery should generate useSuspenseInfiniteQuery when endpoint is configured: useSuspenseInfiniteQuery hooks 1`] = `
+exports[`useSuspenseQuery should generate useSuspenseInfiniteQuery for infinite queries with suspense flag: useSuspenseInfiniteQuery hooks 1`] = `
 "//@ts-nocheck
 /**
  * AUTO_GENERATED Do not change this file directly, use config.ts file instead
@@ -64,7 +64,7 @@ export type SwaggerTypescriptMutationDefaultParams<TExtra> = {
   configOverride?: AxiosRequestConfig;
 };
 type SwaggerTypescriptUseQueryOptions<TData> = Omit<
-  UseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
+  UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
   \\"queryKey\\"
 >;
 
@@ -138,7 +138,7 @@ export const useGetProductsId = (
 ) => {
   const { key, fun } = useGetProductsId.info(id, configOverride);
 
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: key,
     queryFn: fun,
     ...options,
@@ -173,7 +173,7 @@ export const useGetUsersId = (
 ) => {
   const { key, fun } = useGetUsersId.info(id, configOverride);
 
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: key,
     queryFn: fun,
     ...options,
@@ -219,7 +219,7 @@ export const usePostOrders = <TExtra,>(
 "
 `;
 
-exports[`useSuspenseQuery should generate useSuspenseQuery hooks for configured endpoints: useSuspenseQuery hooks 1`] = `
+exports[`useSuspenseQuery should generate useSuspenseQuery hooks when createSuspenseHooks is enabled: useSuspenseQuery hooks 1`] = `
 "//@ts-nocheck
 /**
  * AUTO_GENERATED Do not change this file directly, use config.ts file instead
@@ -254,7 +254,7 @@ export type SwaggerTypescriptMutationDefaultParams<TExtra> = {
   configOverride?: AxiosRequestConfig;
 };
 type SwaggerTypescriptUseQueryOptions<TData> = Omit<
-  UseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
+  UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
   \\"queryKey\\"
 >;
 
@@ -264,14 +264,9 @@ type SwaggerTypescriptUseMutationOptions<TData, TRequest, TExtra> =
     RequestError | Error,
     TRequest & SwaggerTypescriptMutationDefaultParams<TExtra>
   >;
-
-type SwaggerTypescriptUseSuspenseQueryOptions<TData> = Omit<
-  UseSuspenseQueryOptions<SwaggerResponse<TData>, RequestError | Error>,
-  \\"queryKey\\"
->;
 export const useGetProducts = (
   queryParams?: GetProductsQueryParams,
-  options?: SwaggerTypescriptUseSuspenseQueryOptions<Product[]>,
+  options?: SwaggerTypescriptUseQueryOptions<Product[]>,
   configOverride?: AxiosRequestConfig,
 ) => {
   const { key, fun } = useGetProducts.info(queryParams, configOverride);
@@ -294,7 +289,7 @@ useGetProducts.info = (
 useGetProducts.prefetch = (
   client: QueryClient,
   queryParams?: GetProductsQueryParams,
-  options?: SwaggerTypescriptUseSuspenseQueryOptions<Product[]>,
+  options?: SwaggerTypescriptUseQueryOptions<Product[]>,
   configOverride?: AxiosRequestConfig,
 ) => {
   const { key, fun } = useGetProducts.info(queryParams, configOverride);
@@ -314,7 +309,7 @@ export const useGetProductsId = (
 ) => {
   const { key, fun } = useGetProductsId.info(id, configOverride);
 
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: key,
     queryFn: fun,
     ...options,
@@ -344,7 +339,7 @@ useGetProductsId.prefetch = (
 };
 export const useGetUsersId = (
   id: string,
-  options?: SwaggerTypescriptUseSuspenseQueryOptions<User>,
+  options?: SwaggerTypescriptUseQueryOptions<User>,
   configOverride?: AxiosRequestConfig,
 ) => {
   const { key, fun } = useGetUsersId.info(id, configOverride);
@@ -364,7 +359,7 @@ useGetUsersId.info = (id: string, configOverride?: AxiosRequestConfig) => {
 useGetUsersId.prefetch = (
   client: QueryClient,
   id: string,
-  options?: SwaggerTypescriptUseSuspenseQueryOptions<User>,
+  options?: SwaggerTypescriptUseQueryOptions<User>,
   configOverride?: AxiosRequestConfig,
 ) => {
   const { key, fun } = useGetUsersId.info(id, configOverride);

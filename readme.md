@@ -97,8 +97,7 @@ For Example:
 | `reactHooks`                 | false                  | For generate react hooks of all APIs (using react-query under the hood)                                                                                                                                                                        |
 | `useQuery`                   | []                     | List of apis which is get but developed with post methods (Is useful for rest apis) for Example: ["postTicketsGetall"] (Needed to enable `reactHooks`)                                                                                         |
 | `useInfiniteQuery`           | []                     | List of apis which is get and could be handle infinity (Needed to enable `reactHooks`) parameter should be one of `page`, `pageNo` or `pageNumber`                                                                                             |
-| `useSuspenseQuery`           | []                     | List of apis to generate with React Query's `useSuspenseQuery` for automatic suspense mode (Needed to enable `reactHooks`) [See React Query Suspense](#react-query-suspense)                                                                   |
-| `useSuspenseInfiniteQuery`   | []                     | List of apis to generate with React Query's `useSuspenseInfiniteQuery` for suspense + infinite queries (Needed to enable `reactHooks`) [See React Query Suspense](#react-query-suspense)                                                       |
+| `createSuspenseHooks`        | false                  | Generate suspense-enabled hooks (`useSuspenseQuery` and `useSuspenseInfiniteQuery`) instead of regular hooks (Needed to enable `reactHooks`) [See React Query Suspense](#react-query-suspense)                                                 |
 | `local`                      | false                  | update swagger with local swagger.json located in your dir folder. add it to your config file or run it with cli `$ yarn swag-ts --local`                                                                                                      |
 | `kotlinPackage`              | Required (Only kotlin) | package name of source dir                                                                                                                                                                                                                     |
 | `generateEnumAsType`         | false                  |
@@ -205,39 +204,54 @@ to generate swagger for develop run `yarn swag-ts --branch=develop` or your bran
 
 ## React Query Suspense
 
-When using `reactHooks: true`, you can generate hooks using React Query's Suspense features. This requires `@tanstack/react-query` v5 or higher.
+When using `reactHooks: true`, you can enable suspense mode for all generated hooks using the `createSuspenseHooks` flag. This requires `@tanstack/react-query` v5 or higher.
 
-### Configuration Options
+### Configuration
 
-You can configure which endpoints generate suspense-enabled hooks:
+Enable suspense mode for all query hooks:
 
 ```json
 {
   "reactHooks": true,
-  "useSuspenseQuery": ["getUserById", "getProducts"],
-  "useSuspenseInfiniteQuery": ["getProductList"]
+  "createSuspenseHooks": true
 }
 ```
 
-### Hook Types
+With this configuration:
+- All query hooks will use `useSuspenseQuery` instead of `useQuery`
+- All infinite query hooks will use `useSuspenseInfiniteQuery` instead of `useInfiniteQuery`
+- Mutations remain unchanged (still use `useMutation`)
 
-#### `useSuspenseQuery`
+### Example Configuration
 
-Generates hooks using React Query's `useSuspenseQuery` for automatic suspense mode. These hooks will suspend the component while loading and throw errors to the nearest error boundary.
+```json
+{
+  "reactHooks": true,
+  "createSuspenseHooks": true,
+  "useQuery": ["postSearch"],           // Will generate useSuspenseQuery
+  "useInfiniteQuery": ["getProducts"]   // Will generate useSuspenseInfiniteQuery
+}
+```
+
+### Generated Hooks
+
+#### Regular Query with Suspense
+
+When `createSuspenseHooks: true`, query hooks will use `useSuspenseQuery`:
 
 ```typescript
-// Generated hook
-const { data } = useGetUserById(userId);
+// Generated hook automatically suspends while loading
+const { data: user } = useGetUserById(userId);
 // No need to check for loading state - component suspends automatically
 ```
 
-#### `useSuspenseInfiniteQuery`
+#### Infinite Query with Suspense
 
-Generates hooks using React Query's `useSuspenseInfiniteQuery` for suspense mode with infinite/pagination queries.
+Infinite query hooks will use `useSuspenseInfiniteQuery`:
 
 ```typescript
-// Generated hook
-const { data, list, hasMore, fetchNextPage } = useGetProductList(filters);
+// Generated hook with pagination + suspense
+const { data, list, hasMore, fetchNextPage } = useGetProducts(filters);
 // Automatically handles suspense + pagination
 ```
 
@@ -263,18 +277,22 @@ function App() {
 }
 ```
 
-### Combining Different Hook Types
-
-You can mix different hook types in the same configuration:
+### Regular vs Suspense Hooks
 
 ```json
+// Regular hooks (default)
 {
   "reactHooks": true,
-  "useQuery": ["postSearch"],                    // Regular query
-  "useInfiniteQuery": ["getOrders"],            // Regular infinite query
-  "useSuspenseQuery": ["getUserById"],          // Suspense query
-  "useSuspenseInfiniteQuery": ["getProducts"]   // Suspense + infinite query
+  "createSuspenseHooks": false  // or omit this line
 }
+// Generates: useQuery, useInfiniteQuery, useMutation
+
+// Suspense hooks
+{
+  "reactHooks": true,
+  "createSuspenseHooks": true
+}
+// Generates: useSuspenseQuery, useSuspenseInfiniteQuery, useMutation
 ```
 
 ## Stories

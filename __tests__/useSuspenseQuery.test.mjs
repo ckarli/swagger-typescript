@@ -198,7 +198,7 @@ describe("useSuspenseQuery", () => {
     await cleanOutputDir("./__tests__/outputs/useSuspenseQuery");
   });
 
-  test("should generate useSuspenseQuery hooks for configured endpoints", async () => {
+  test("should generate useSuspenseQuery hooks when createSuspenseHooks is enabled", async () => {
     const {
       "services.ts": code,
       "hooks.ts": hooks,
@@ -208,7 +208,7 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getUsersId", "getProducts"],
+        createSuspenseHooks: true,
       },
       swaggerJson,
     );
@@ -223,19 +223,19 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toContain("useSuspenseQuery");
     expect(hooks).toContain("UseSuspenseQueryOptions");
 
-    // Verify specific hooks use useSuspenseQuery
+    // Verify specific hooks are generated
     expect(hooks).toContain("export const useGetUsersId");
     expect(hooks).toContain("export const useGetProducts");
+    expect(hooks).toContain("export const useGetProductsId");
     
-    // Verify that the configured endpoints use useSuspenseQuery
+    // Verify that ALL query endpoints use useSuspenseQuery when flag is enabled
     const usersGetByIdHookMatch = hooks.match(/export const useGetUsersId[\s\S]*?return useSuspenseQuery/);
     expect(usersGetByIdHookMatch).toBeTruthy();
     
     const productsGetAllHookMatch = hooks.match(/export const useGetProducts[\s\S]*?return useSuspenseQuery/);
     expect(productsGetAllHookMatch).toBeTruthy();
 
-    // Verify that non-configured endpoints use useQuery
-    const productsGetByIdHookMatch = hooks.match(/export const useGetProductsId[\s\S]*?return useQuery/);
+    const productsGetByIdHookMatch = hooks.match(/export const useGetProductsId[\s\S]*?return useSuspenseQuery/);
     expect(productsGetByIdHookMatch).toBeTruthy();
 
     // Verify types are generated
@@ -247,7 +247,7 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toMatchSnapshot("useSuspenseQuery hooks");
   }, 10000);
 
-  test("should generate SwaggerTypescriptUseSuspenseQueryOptions type when useSuspenseQuery is configured", async () => {
+  test("should generate correct types when createSuspenseHooks is enabled", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -255,13 +255,13 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getUsersId"],
+        createSuspenseHooks: true,
       },
       swaggerJson,
     );
 
-    // Verify the type is generated
-    expect(hooks).toContain("type SwaggerTypescriptUseSuspenseQueryOptions");
+    // Verify the type uses UseSuspenseQueryOptions
+    expect(hooks).toContain("type SwaggerTypescriptUseQueryOptions");
     expect(hooks).toContain("UseSuspenseQueryOptions<SwaggerResponse<");
   }, 10000);
 
@@ -285,7 +285,7 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toContain("return useQuery");
   }, 10000);
 
-  test("should handle both useQuery and useSuspenseQuery in same config", async () => {
+  test("should handle POST methods configured as query with suspense", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -293,26 +293,21 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getUsersId"],
+        createSuspenseHooks: true,
         useQuery: ["postOrders"], // POST endpoint configured as query
       },
       swaggerJson,
     );
 
-    // Verify both imports exist
-    expect(hooks).toContain("useQuery");
+    // Verify suspense import exists
     expect(hooks).toContain("useSuspenseQuery");
     
-    // Verify getUsersId uses useSuspenseQuery
-    const usersHookMatch = hooks.match(/export const useGetUsersId[\s\S]*?return useSuspenseQuery/);
-    expect(usersHookMatch).toBeTruthy();
-    
-    // Verify postOrders uses useQuery (not mutation)
-    const ordersHookMatch = hooks.match(/export const usePostOrders[\s\S]*?return useQuery/);
+    // Verify postOrders uses useSuspenseQuery (not mutation)
+    const ordersHookMatch = hooks.match(/export const usePostOrders[\s\S]*?return useSuspenseQuery/);
     expect(ordersHookMatch).toBeTruthy();
   }, 10000);
 
-  test("should generate useSuspenseInfiniteQuery when endpoint is configured", async () => {
+  test("should generate useSuspenseInfiniteQuery for infinite queries with suspense flag", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -320,7 +315,8 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseInfiniteQuery: ["getProducts"],
+        createSuspenseHooks: true,
+        useInfiniteQuery: ["getProducts"],
       },
       swaggerJson,
     );
@@ -342,7 +338,7 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toMatchSnapshot("useSuspenseInfiniteQuery hooks");
   }, 10000);
 
-  test("should support mixing useSuspenseInfiniteQuery and useSuspenseQuery", async () => {
+  test("should support mixing regular and infinite queries with suspense", async () => {
     const {
       "hooks.ts": hooks,
     } = await generator(
@@ -350,8 +346,8 @@ describe("useSuspenseQuery", () => {
         url: "./__tests__/outputs/useSuspenseQuery/swagger.json",
         dir: "./__tests__/outputs/useSuspenseQuery",
         reactHooks: true,
-        useSuspenseQuery: ["getUsersId"],
-        useSuspenseInfiniteQuery: ["getProducts"],
+        createSuspenseHooks: true,
+        useInfiniteQuery: ["getProducts"],
       },
       swaggerJson,
     );
@@ -360,11 +356,11 @@ describe("useSuspenseQuery", () => {
     expect(hooks).toContain("useSuspenseInfiniteQuery");
     expect(hooks).toContain("useSuspenseQuery");
     
-    // Verify getProducts uses useSuspenseInfiniteQuery
+    // Verify getProducts uses useSuspenseInfiniteQuery (configured as infinite)
     const productsHookMatch = hooks.match(/export const useGetProducts[\s\S]*?useSuspenseInfiniteQuery\(/);
     expect(productsHookMatch).toBeTruthy();
     
-    // Verify getUsersId uses useSuspenseQuery (not infinite)
+    // Verify getUsersId uses useSuspenseQuery (regular query with suspense)
     const usersHookMatch = hooks.match(/export const useGetUsersId[\s\S]*?return useSuspenseQuery/);
     expect(usersHookMatch).toBeTruthy();
   }, 10000);
