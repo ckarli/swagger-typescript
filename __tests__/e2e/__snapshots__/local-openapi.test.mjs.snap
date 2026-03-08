@@ -341,7 +341,9 @@ export const useGet_allauthBrowserV1AccountAuthenticators = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<Authenticators>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Authenticators>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AccountAuthenticators.info(
     headerParams,
     configOverride,
@@ -391,7 +393,9 @@ export const useGet_allauthBrowserV1AccountAuthenticatorsRecoveryCodes = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<RecoveryCodes>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RecoveryCodes>, RequestError | Error>
+> => {
   const { key, fun } =
     useGet_allauthBrowserV1AccountAuthenticatorsRecoveryCodes.info(
       headerParams,
@@ -446,7 +450,9 @@ export const useGet_allauthBrowserV1AccountAuthenticatorsTotp = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<TOTPAuthenticator>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TOTPAuthenticator>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AccountAuthenticatorsTotp.info(
     headerParams,
     configOverride,
@@ -499,7 +505,9 @@ export const useGet_allauthBrowserV1AccountEmail = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<EmailAddresses>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<EmailAddresses>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AccountEmail.info(
     headerParams,
     configOverride,
@@ -545,7 +553,9 @@ export const useGet_allauthBrowserV1AccountPhone = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<PhoneNumbers>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PhoneNumbers>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AccountPhone.info(
     headerParams,
     configOverride,
@@ -591,7 +601,9 @@ export const useGet_allauthBrowserV1AccountProviders = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<ProviderAccounts>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProviderAccounts>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AccountProviders.info(
     headerParams,
     configOverride,
@@ -638,7 +650,9 @@ export const useGet_allauthBrowserV1AuthEmailVerify = (
   headerParams?: { \\"X-Email-Verification-Key\\": EmailVerificationKey },
   options?: SwaggerTypescriptUseQueryOptions<EmailVerificationInfo>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<EmailVerificationInfo>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AuthEmailVerify.info(
     headerParams,
     configOverride,
@@ -685,7 +699,9 @@ export const useGet_allauthBrowserV1AuthPasswordReset = (
   headerParams?: { \\"X-Password-Reset-Key\\": PasswordResetKey },
   options?: SwaggerTypescriptUseQueryOptions<PasswordResetInfo>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PasswordResetInfo>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AuthPasswordReset.info(
     headerParams,
     configOverride,
@@ -731,7 +747,9 @@ useGet_allauthBrowserV1AuthPasswordReset.prefetch = (
 export const useGet_allauthBrowserV1AuthProviderSignup = (
   options?: SwaggerTypescriptUseQueryOptions<ProviderSignup>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProviderSignup>, RequestError | Error>
+> => {
   const { key, fun } =
     useGet_allauthBrowserV1AuthProviderSignup.info(configOverride);
 
@@ -771,7 +789,9 @@ export const useGet_allauthBrowserV1AuthSession = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<Authenticated>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Authenticated>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AuthSession.info(
     headerParams,
     configOverride,
@@ -817,7 +837,9 @@ export const useGet_allauthBrowserV1AuthSessions = (
   headerParams?: { \\"X-Session-Token\\": SessionToken },
   options?: SwaggerTypescriptUseQueryOptions<Sessions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Sessions>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1AuthSessions.info(
     headerParams,
     configOverride,
@@ -862,7 +884,9 @@ useGet_allauthBrowserV1AuthSessions.prefetch = (
 export const useGet_allauthBrowserV1Config = (
   options?: SwaggerTypescriptUseQueryOptions<Configuration>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Configuration>, RequestError | Error>
+> => {
   const { key, fun } = useGet_allauthBrowserV1Config.info(configOverride);
 
   return useQuery({

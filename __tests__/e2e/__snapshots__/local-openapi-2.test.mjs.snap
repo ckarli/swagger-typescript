@@ -2705,7 +2705,9 @@ export const useGetApiSchema = (
   queryParams?: GetApiSchemaQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ [x: string]: any }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ [x: string]: any }>, RequestError | Error>
+> => {
   const { key, fun } = useGetApiSchema.info(queryParams, configOverride);
 
   return useQuery({
@@ -2742,7 +2744,9 @@ useGetApiSchema.prefetch = (
 export const useGetAuthGroups = (
   options?: SwaggerTypescriptUseQueryOptions<GroupMember[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<GroupMember[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthGroups.info(configOverride);
 
   return useQuery({
@@ -2777,7 +2781,9 @@ export const useGetAuthGroupsId = (
   id: number,
   options?: SwaggerTypescriptUseQueryOptions<GroupMember>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<GroupMember>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthGroupsId.info(id, configOverride);
 
   return useQuery({
@@ -2817,7 +2823,9 @@ useGetAuthGroupsId.prefetch = (
 export const useGetAuthGroupsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthGroupsPermissions.info(configOverride);
 
   return useQuery({
@@ -2850,7 +2858,12 @@ useGetAuthGroupsPermissions.prefetch = (
 export const useGetAuthPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<ConsolidatedPermissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ConsolidatedPermissions>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAuthPermissions.info(configOverride);
 
   return useQuery({
@@ -2883,7 +2896,9 @@ useGetAuthPermissions.prefetch = (
 export const useGetAuthUser = (
   options?: SwaggerTypescriptUseQueryOptions<CustomUserDetails>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<CustomUserDetails>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthUser.info(configOverride);
 
   return useQuery({
@@ -2916,7 +2931,9 @@ useGetAuthUser.prefetch = (
 export const useGetAuthUserGroups = (
   options?: SwaggerTypescriptUseQueryOptions<UserGroup[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserGroup[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthUserGroups.info(configOverride);
 
   return useQuery({
@@ -2951,7 +2968,9 @@ export const useGetAuthUserGroupsId = (
   id: number,
   options?: SwaggerTypescriptUseQueryOptions<UserGroup>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserGroup>, RequestError | Error>
+> => {
   const { key, fun } = useGetAuthUserGroupsId.info(id, configOverride);
 
   return useQuery({
@@ -2992,7 +3011,12 @@ export const useGetCodesActivities = (
   queryParams?: GetCodesActivitiesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedActivityListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedActivityListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetCodesActivities.info(queryParams, configOverride);
 
   return useQuery({
@@ -3032,7 +3056,9 @@ export const useGetCodesActivitiesId = (
   queryParams?: GetCodesActivitiesIdQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Activity>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Activity>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesActivitiesId.info(
     id,
     queryParams,
@@ -3083,7 +3109,9 @@ export const useGetCodesActivitiesPermissions = (
   queryParams?: GetCodesActivitiesPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesActivitiesPermissions.info(
     queryParams,
     configOverride,
@@ -3126,7 +3154,12 @@ useGetCodesActivitiesPermissions.prefetch = (
 export const useGetCodesActivityAccountCodes = (
   options?: SwaggerTypescriptUseQueryOptions<SupplierAccountingCode[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SupplierAccountingCode[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetCodesActivityAccountCodes.info(configOverride);
 
   return useQuery({
@@ -3163,7 +3196,9 @@ export const useGetCodesActivityAccountCodesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SupplierAccountingCode>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierAccountingCode>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesActivityAccountCodesId.info(
     id,
     configOverride,
@@ -3210,7 +3245,12 @@ export const useGetCodesResources = (
   queryParams?: GetCodesResourcesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedResourceListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedResourceListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetCodesResources.info(queryParams, configOverride);
 
   return useQuery({
@@ -3250,7 +3290,9 @@ export const useGetCodesResourcesId = (
   queryParams?: GetCodesResourcesIdQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Resource>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Resource>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesResourcesId.info(
     id,
     queryParams,
@@ -3301,7 +3343,9 @@ export const useGetCodesResourcesPermissions = (
   queryParams?: GetCodesResourcesPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesResourcesPermissions.info(
     queryParams,
     configOverride,
@@ -3345,7 +3389,9 @@ export const useGetCodesWbs = (
   queryParams?: GetCodesWbsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedWBSListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedWBSListList>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesWbs.info(queryParams, configOverride);
 
   return useQuery({
@@ -3385,7 +3431,7 @@ export const useGetCodesWbsId = (
   queryParams?: GetCodesWbsIdQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<WBS>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<WBS>, RequestError | Error>> => {
   const { key, fun } = useGetCodesWbsId.info(id, queryParams, configOverride);
 
   return useQuery({
@@ -3428,7 +3474,9 @@ export const useGetCodesWbsPermissions = (
   queryParams?: GetCodesWbsPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetCodesWbsPermissions.info(
     queryParams,
     configOverride,
@@ -3472,7 +3520,7 @@ export const useGetCodesWbsProjects = (
   queryParams?: GetCodesWbsProjectsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<WBS>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<WBS>, RequestError | Error>> => {
   const { key, fun } = useGetCodesWbsProjects.info(queryParams, configOverride);
 
   return useQuery({
@@ -3511,7 +3559,9 @@ export const useGetCommonAttachmentsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Attachment>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Attachment>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonAttachmentsId.info(id, configOverride);
 
   return useQuery({
@@ -3551,7 +3601,9 @@ useGetCommonAttachmentsId.prefetch = (
 export const useGetCommonBankNames = (
   options?: SwaggerTypescriptUseQueryOptions<BankName[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankName[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonBankNames.info(configOverride);
 
   return useQuery({
@@ -3586,7 +3638,9 @@ export const useGetCommonBankNamesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<BankName>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankName>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonBankNamesId.info(id, configOverride);
 
   return useQuery({
@@ -3626,7 +3680,9 @@ useGetCommonBankNamesId.prefetch = (
 export const useGetCommonCurrencies = (
   options?: SwaggerTypescriptUseQueryOptions<Currency[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Currency[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonCurrencies.info(configOverride);
 
   return useQuery({
@@ -3661,7 +3717,9 @@ export const useGetCommonCurrenciesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Currency>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Currency>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonCurrenciesId.info(id, configOverride);
 
   return useQuery({
@@ -3701,7 +3759,9 @@ useGetCommonCurrenciesId.prefetch = (
 export const useGetCommonFeatureFlags = (
   options?: SwaggerTypescriptUseQueryOptions<FeatureFlags[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<FeatureFlags[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonFeatureFlags.info(configOverride);
 
   return useQuery({
@@ -3734,7 +3794,9 @@ useGetCommonFeatureFlags.prefetch = (
 export const useGetCommonPackagingMethods = (
   options?: SwaggerTypescriptUseQueryOptions<PackagingMethod[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PackagingMethod[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonPackagingMethods.info(configOverride);
 
   return useQuery({
@@ -3769,7 +3831,9 @@ export const useGetCommonPackagingMethodsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<PackagingMethod>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PackagingMethod>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonPackagingMethodsId.info(id, configOverride);
 
   return useQuery({
@@ -3809,7 +3873,9 @@ useGetCommonPackagingMethodsId.prefetch = (
 export const useGetCommonPaymentMethods = (
   options?: SwaggerTypescriptUseQueryOptions<PaymentMethod[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentMethod[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonPaymentMethods.info(configOverride);
 
   return useQuery({
@@ -3844,7 +3910,9 @@ export const useGetCommonPaymentMethodsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentMethod>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentMethod>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonPaymentMethodsId.info(id, configOverride);
 
   return useQuery({
@@ -3884,7 +3952,9 @@ useGetCommonPaymentMethodsId.prefetch = (
 export const useGetCommonResourceUnits = (
   options?: SwaggerTypescriptUseQueryOptions<ResourceUnit[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ResourceUnit[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonResourceUnits.info(configOverride);
 
   return useQuery({
@@ -3919,7 +3989,9 @@ export const useGetCommonResourceUnitsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ResourceUnit>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ResourceUnit>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonResourceUnitsId.info(id, configOverride);
 
   return useQuery({
@@ -3959,7 +4031,9 @@ useGetCommonResourceUnitsId.prefetch = (
 export const useGetCommonTaxParameters = (
   options?: SwaggerTypescriptUseQueryOptions<TaxParameter[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TaxParameter[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonTaxParameters.info(configOverride);
 
   return useQuery({
@@ -3994,7 +4068,9 @@ export const useGetCommonTaxParametersId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<TaxParameter>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TaxParameter>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonTaxParametersId.info(id, configOverride);
 
   return useQuery({
@@ -4034,7 +4110,9 @@ useGetCommonTaxParametersId.prefetch = (
 export const useGetCommonVatWitholdings = (
   options?: SwaggerTypescriptUseQueryOptions<Vatwitholding[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Vatwitholding[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonVatWitholdings.info(configOverride);
 
   return useQuery({
@@ -4069,7 +4147,9 @@ export const useGetCommonVatWitholdingsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Vatwitholding>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Vatwitholding>, RequestError | Error>
+> => {
   const { key, fun } = useGetCommonVatWitholdingsId.info(id, configOverride);
 
   return useQuery({
@@ -4109,7 +4189,9 @@ useGetCommonVatWitholdingsId.prefetch = (
 export const useGetFinanceAccountTypes = (
   options?: SwaggerTypescriptUseQueryOptions<AccountType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceAccountTypes.info(configOverride);
 
   return useQuery({
@@ -4201,7 +4283,9 @@ export const useGetFinanceAccountsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Account>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Account>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceAccountsId.info(id, configOverride);
 
   return useQuery({
@@ -4241,7 +4325,9 @@ useGetFinanceAccountsId.prefetch = (
 export const useGetFinanceBankAccountTypes = (
   options?: SwaggerTypescriptUseQueryOptions<AccountType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceBankAccountTypes.info(configOverride);
 
   return useQuery({
@@ -4275,7 +4361,12 @@ export const useGetFinanceBankAccounts = (
   queryParams?: GetFinanceBankAccountsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedBankAccountListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedBankAccountListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceBankAccounts.info(
     queryParams,
     configOverride,
@@ -4320,7 +4411,9 @@ export const useGetFinanceBankAccountsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<BankAccount>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankAccount>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceBankAccountsId.info(id, configOverride);
 
   return useQuery({
@@ -4360,7 +4453,9 @@ useGetFinanceBankAccountsId.prefetch = (
 export const useGetFinanceCashAccountTypes = (
   options?: SwaggerTypescriptUseQueryOptions<AccountType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceCashAccountTypes.info(configOverride);
 
   return useQuery({
@@ -4394,7 +4489,12 @@ export const useGetFinanceCashAccounts = (
   queryParams?: GetFinanceCashAccountsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedCashAccountListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedCashAccountListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceCashAccounts.info(
     queryParams,
     configOverride,
@@ -4439,7 +4539,9 @@ export const useGetFinanceCashAccountsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<CashAccount>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<CashAccount>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceCashAccountsId.info(id, configOverride);
 
   return useQuery({
@@ -4479,7 +4581,9 @@ useGetFinanceCashAccountsId.prefetch = (
 export const useGetFinanceDefaultCurrency = (
   options?: SwaggerTypescriptUseQueryOptions<Currency[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Currency[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceDefaultCurrency.info(configOverride);
 
   return useQuery({
@@ -4513,7 +4617,9 @@ export const useGetFinanceDefaultCurrencyId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Currency>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Currency>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceDefaultCurrencyId.info(id, configOverride);
 
   return useQuery({
@@ -4550,7 +4656,9 @@ useGetFinanceDefaultCurrencyId.prefetch = (
 export const useGetFinanceExpenseTransactionTypes = (
   options?: SwaggerTypescriptUseQueryOptions<TransactionType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TransactionType[]>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinanceExpenseTransactionTypes.info(configOverride);
 
@@ -4588,7 +4696,12 @@ export const useGetFinanceExpenses = (
   queryParams?: GetFinanceExpensesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedExpenseListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedExpenseListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceExpenses.info(queryParams, configOverride);
 
   return useQuery({
@@ -4626,7 +4739,9 @@ export const useGetFinanceExpensesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Expense>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Expense>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceExpensesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -4670,7 +4785,9 @@ export const useGetFinanceExpensesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Expense>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Expense>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceExpensesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -4718,7 +4835,12 @@ export const useGetFinanceIncomeInvoiceCategories = (
   queryParams?: GetFinanceIncomeInvoiceCategoriesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<IncomeInvoiceCategory[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<IncomeInvoiceCategory[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceIncomeInvoiceCategories.info(
     queryParams,
     configOverride,
@@ -4763,7 +4885,9 @@ export const useGetFinanceIncomeInvoiceCategoriesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<IncomeInvoiceCategory>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<IncomeInvoiceCategory>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceIncomeInvoiceCategoriesId.info(
     id,
     configOverride,
@@ -4810,7 +4934,12 @@ export const useGetFinanceIncomeInvoices = (
   queryParams?: GetFinanceIncomeInvoicesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedIncomeInvoiceListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedIncomeInvoiceListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceIncomeInvoices.info(
     queryParams,
     configOverride,
@@ -4854,7 +4983,9 @@ export const useGetFinanceIncomeInvoicesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<IncomeInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<IncomeInvoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceIncomeInvoicesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -4900,7 +5031,12 @@ export const useGetFinanceIncomeInvoicesCounter__slugApprovalHistory = (
   queryParams?: GetFinanceIncomeInvoicesCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetFinanceIncomeInvoicesCounter__slugApprovalHistory.info(
       counter__slug,
@@ -4959,7 +5095,9 @@ export const useGetFinanceIncomeInvoicesCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<IncomeInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<IncomeInvoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceIncomeInvoicesCounter__slugAttachments.info(
     counter__slug,
     configOverride,
@@ -5010,7 +5148,9 @@ export const useGetFinanceIncomeInvoicesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<IncomeInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<IncomeInvoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceIncomeInvoicesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -5060,7 +5200,9 @@ useGetFinanceIncomeInvoicesCounter__slugHistory.prefetch = (
 export const useGetFinanceIncomeInvoicesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinanceIncomeInvoicesPermissions.info(configOverride);
 
@@ -5098,7 +5240,9 @@ export const useGetFinanceIncomeInvoicesStates = (
   queryParams?: GetFinanceIncomeInvoicesStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceIncomeInvoicesStates.info(
     queryParams,
     configOverride,
@@ -5142,7 +5286,12 @@ export const useGetFinanceInstruments = (
   queryParams?: GetFinanceInstrumentsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedInstrumentListDiscoveryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedInstrumentListDiscoveryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceInstruments.info(
     queryParams,
     configOverride,
@@ -5185,7 +5334,9 @@ useGetFinanceInstruments.prefetch = (
 export const useGetFinanceInstrumentsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceInstrumentsPermissions.info(configOverride);
 
   return useQuery({
@@ -5221,7 +5372,12 @@ export const useGetFinancePaymentBonds = (
   queryParams?: GetFinancePaymentBondsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPaymentBondListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPaymentBondListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinancePaymentBonds.info(
     queryParams,
     configOverride,
@@ -5265,7 +5421,9 @@ export const useGetFinancePaymentBondsCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentBond>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentBond>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinancePaymentBondsCounter__slug.info(
     counter__slug,
     configOverride,
@@ -5310,7 +5468,9 @@ export const useGetFinancePaymentBondsCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentBond>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentBond>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinancePaymentBondsCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -5357,7 +5517,9 @@ useGetFinancePaymentBondsCounter__slugHistory.prefetch = (
 export const useGetFinancePaymentBondsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinancePaymentBondsPermissions.info(configOverride);
 
@@ -5395,7 +5557,12 @@ export const useGetFinancePaymentCheques = (
   queryParams?: GetFinancePaymentChequesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPaymentChequeListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPaymentChequeListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinancePaymentCheques.info(
     queryParams,
     configOverride,
@@ -5439,7 +5606,9 @@ export const useGetFinancePaymentChequesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentCheque>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentCheque>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinancePaymentChequesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -5484,7 +5653,9 @@ export const useGetFinancePaymentChequesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentCheque>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentCheque>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinancePaymentChequesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -5534,7 +5705,9 @@ useGetFinancePaymentChequesCounter__slugHistory.prefetch = (
 export const useGetFinancePaymentChequesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinancePaymentChequesPermissions.info(configOverride);
 
@@ -5572,7 +5745,12 @@ export const useGetFinancePaymentDetails = (
   queryParams?: GetFinancePaymentDetailsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPaymentDetailList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPaymentDetailList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinancePaymentDetails.info(
     queryParams,
     configOverride,
@@ -5617,7 +5795,9 @@ export const useGetFinancePaymentDetailsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<PaymentDetail>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaymentDetail>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinancePaymentDetailsId.info(id, configOverride);
 
   return useQuery({
@@ -5657,7 +5837,9 @@ useGetFinancePaymentDetailsId.prefetch = (
 export const useGetFinancePaymentInstrumentStates = (
   options?: SwaggerTypescriptUseQueryOptions<AccountType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountType[]>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinancePaymentInstrumentStates.info(configOverride);
 
@@ -5695,7 +5877,12 @@ export const useGetFinancePlannedPayments = (
   queryParams?: GetFinancePlannedPaymentsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPaymentPlan2TypeDiscoveryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPaymentPlan2TypeDiscoveryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinancePlannedPayments.info(
     queryParams,
     configOverride,
@@ -5738,7 +5925,9 @@ useGetFinancePlannedPayments.prefetch = (
 export const useGetFinancePlannedPaymentsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinancePlannedPaymentsPermissions.info(configOverride);
 
@@ -5776,7 +5965,12 @@ export const useGetFinancePlannedRevenue = (
   queryParams?: GetFinancePlannedRevenueQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPaymentPlan2TypeDiscoveryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPaymentPlan2TypeDiscoveryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinancePlannedRevenue.info(
     queryParams,
     configOverride,
@@ -5819,7 +6013,9 @@ useGetFinancePlannedRevenue.prefetch = (
 export const useGetFinancePlannedRevenuePermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinancePlannedRevenuePermissions.info(configOverride);
 
@@ -5857,7 +6053,12 @@ export const useGetFinanceRevenueBonds = (
   queryParams?: GetFinanceRevenueBondsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedRevenueBondListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedRevenueBondListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceRevenueBonds.info(
     queryParams,
     configOverride,
@@ -5901,7 +6102,9 @@ export const useGetFinanceRevenueBondsCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<RevenueBond>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RevenueBond>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceRevenueBondsCounter__slug.info(
     counter__slug,
     configOverride,
@@ -5946,7 +6149,9 @@ export const useGetFinanceRevenueBondsCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<RevenueBond>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RevenueBond>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceRevenueBondsCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -5993,7 +6198,9 @@ useGetFinanceRevenueBondsCounter__slugHistory.prefetch = (
 export const useGetFinanceRevenueBondsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinanceRevenueBondsPermissions.info(configOverride);
 
@@ -6031,7 +6238,12 @@ export const useGetFinanceRevenueCheques = (
   queryParams?: GetFinanceRevenueChequesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedRevenueChequeListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedRevenueChequeListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceRevenueCheques.info(
     queryParams,
     configOverride,
@@ -6075,7 +6287,9 @@ export const useGetFinanceRevenueChequesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<RevenueCheque>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RevenueCheque>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceRevenueChequesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -6120,7 +6334,9 @@ export const useGetFinanceRevenueChequesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<RevenueCheque>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RevenueCheque>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceRevenueChequesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -6170,7 +6386,9 @@ useGetFinanceRevenueChequesCounter__slugHistory.prefetch = (
 export const useGetFinanceRevenueChequesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetFinanceRevenueChequesPermissions.info(configOverride);
 
@@ -6208,7 +6426,12 @@ export const useGetFinanceRevenueDetails = (
   queryParams?: GetFinanceRevenueDetailsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedRevenueDetailList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedRevenueDetailList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceRevenueDetails.info(
     queryParams,
     configOverride,
@@ -6253,7 +6476,9 @@ export const useGetFinanceRevenueDetailsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<RevenueDetail>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RevenueDetail>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceRevenueDetailsId.info(id, configOverride);
 
   return useQuery({
@@ -6294,7 +6519,9 @@ export const useGetFinanceSlips = (
   queryParams?: GetFinanceSlipsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedSlipList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedSlipList>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceSlips.info(queryParams, configOverride);
 
   return useQuery({
@@ -6333,7 +6560,7 @@ export const useGetFinanceSlipsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Slip>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<Slip>, RequestError | Error>> => {
   const { key, fun } = useGetFinanceSlipsId.info(id, configOverride);
 
   return useQuery({
@@ -6373,7 +6600,9 @@ useGetFinanceSlipsId.prefetch = (
 export const useGetFinanceSupplierAccountTypes = (
   options?: SwaggerTypescriptUseQueryOptions<AccountType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceSupplierAccountTypes.info(configOverride);
 
   return useQuery({
@@ -6409,7 +6638,12 @@ export const useGetFinanceSupplierAccounts = (
   queryParams?: GetFinanceSupplierAccountsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedSupplierAccountListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedSupplierAccountListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceSupplierAccounts.info(
     queryParams,
     configOverride,
@@ -6454,7 +6688,9 @@ export const useGetFinanceSupplierAccountsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SupplierAccount>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierAccount>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceSupplierAccountsId.info(id, configOverride);
 
   return useQuery({
@@ -6495,7 +6731,12 @@ export const useGetFinanceTxns = (
   queryParams?: GetFinanceTxnsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedTransactionList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedTransactionList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFinanceTxns.info(queryParams, configOverride);
 
   return useQuery({
@@ -6533,7 +6774,9 @@ export const useGetFinanceTxnsExport = (
   queryParams?: GetFinanceTxnsExportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceTxnsExport.info(
     queryParams,
     configOverride,
@@ -6578,7 +6821,9 @@ export const useGetFinanceTxnsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Transaction>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Transaction>, RequestError | Error>
+> => {
   const { key, fun } = useGetFinanceTxnsId.info(id, configOverride);
 
   return useQuery({
@@ -6619,7 +6864,9 @@ export const useGetHrCrews = (
   queryParams?: GetHrCrewsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedCrewListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedCrewListList>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrCrews.info(queryParams, configOverride);
 
   return useQuery({
@@ -6658,7 +6905,7 @@ export const useGetHrCrewsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Crew>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<Crew>, RequestError | Error>> => {
   const { key, fun } = useGetHrCrewsId.info(id, configOverride);
 
   return useQuery({
@@ -6700,7 +6947,7 @@ export const useGetHrCrewsIdHistory = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Crew>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<Crew>, RequestError | Error>> => {
   const { key, fun } = useGetHrCrewsIdHistory.info(id, configOverride);
 
   return useQuery({
@@ -6740,7 +6987,9 @@ useGetHrCrewsIdHistory.prefetch = (
 export const useGetHrCrewsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrCrewsPermissions.info(configOverride);
 
   return useQuery({
@@ -6774,7 +7023,9 @@ export const useGetHrDepartments = (
   queryParams?: GetHrDepartmentsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<MainDepartment[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<MainDepartment[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrDepartments.info(queryParams, configOverride);
 
   return useQuery({
@@ -6813,7 +7064,9 @@ export const useGetHrDepartmentsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<MainDepartment>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<MainDepartment>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrDepartmentsId.info(id, configOverride);
 
   return useQuery({
@@ -6853,7 +7106,9 @@ useGetHrDepartmentsId.prefetch = (
 export const useGetHrLocations = (
   options?: SwaggerTypescriptUseQueryOptions<LocationParameter[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<LocationParameter[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrLocations.info(configOverride);
 
   return useQuery({
@@ -6888,7 +7143,9 @@ export const useGetHrLocationsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<LocationParameter>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<LocationParameter>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrLocationsId.info(id, configOverride);
 
   return useQuery({
@@ -6929,7 +7186,12 @@ export const useGetHrPersonnel = (
   queryParams?: GetHrPersonnelQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedPersonListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedPersonListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetHrPersonnel.info(queryParams, configOverride);
 
   return useQuery({
@@ -6968,7 +7230,9 @@ export const useGetHrPersonnelId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Person>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Person>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrPersonnelId.info(id, configOverride);
 
   return useQuery({
@@ -7010,7 +7274,9 @@ export const useGetHrPersonnelIdHistory = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Person>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Person>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrPersonnelIdHistory.info(id, configOverride);
 
   return useQuery({
@@ -7050,7 +7316,9 @@ useGetHrPersonnelIdHistory.prefetch = (
 export const useGetHrPersonnelPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrPersonnelPermissions.info(configOverride);
 
   return useQuery({
@@ -7084,7 +7352,9 @@ export const useGetHrPositions = (
   queryParams?: GetHrPositionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<MainPosition[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<MainPosition[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrPositions.info(queryParams, configOverride);
 
   return useQuery({
@@ -7123,7 +7393,9 @@ export const useGetHrPositionsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<MainPosition>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<MainPosition>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrPositionsId.info(id, configOverride);
 
   return useQuery({
@@ -7163,7 +7435,9 @@ useGetHrPositionsId.prefetch = (
 export const useGetHrProfessions = (
   options?: SwaggerTypescriptUseQueryOptions<Profession[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Profession[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrProfessions.info(configOverride);
 
   return useQuery({
@@ -7198,7 +7472,9 @@ export const useGetHrProfessionsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Profession>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Profession>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrProfessionsId.info(id, configOverride);
 
   return useQuery({
@@ -7238,7 +7514,9 @@ useGetHrProfessionsId.prefetch = (
 export const useGetHrQuitReasons = (
   options?: SwaggerTypescriptUseQueryOptions<QuitReason[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<QuitReason[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrQuitReasons.info(configOverride);
 
   return useQuery({
@@ -7273,7 +7551,9 @@ export const useGetHrQuitReasonsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<QuitReason>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<QuitReason>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrQuitReasonsId.info(id, configOverride);
 
   return useQuery({
@@ -7313,7 +7593,9 @@ useGetHrQuitReasonsId.prefetch = (
 export const useGetHrQuitRecords = (
   options?: SwaggerTypescriptUseQueryOptions<QuitRecord[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<QuitRecord[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrQuitRecords.info(configOverride);
 
   return useQuery({
@@ -7348,7 +7630,9 @@ export const useGetHrQuitRecordsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<QuitRecord>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<QuitRecord>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrQuitRecordsId.info(id, configOverride);
 
   return useQuery({
@@ -7389,7 +7673,9 @@ export const useGetHrSalaries = (
   queryParams?: GetHrSalariesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedSalaryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedSalaryList>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrSalaries.info(queryParams, configOverride);
 
   return useQuery({
@@ -7428,7 +7714,9 @@ export const useGetHrSalariesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Salary>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Salary>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrSalariesId.info(id, configOverride);
 
   return useQuery({
@@ -7470,7 +7758,9 @@ export const useGetHrSalariesIdHistory = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Salary>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Salary>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrSalariesIdHistory.info(id, configOverride);
 
   return useQuery({
@@ -7510,7 +7800,9 @@ useGetHrSalariesIdHistory.prefetch = (
 export const useGetHrSalariesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetHrSalariesPermissions.info(configOverride);
 
   return useQuery({
@@ -7544,7 +7836,12 @@ export const useGetHrSalaryPermissions = (
   queryParams?: GetHrSalaryPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ProjectSalaryPermission[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ProjectSalaryPermission[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetHrSalaryPermissions.info(
     queryParams,
     configOverride,
@@ -7589,7 +7886,12 @@ export const useGetHrSalaryPermissionsId = (
   id: number,
   options?: SwaggerTypescriptUseQueryOptions<ProjectSalaryPermission>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ProjectSalaryPermission>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetHrSalaryPermissionsId.info(id, configOverride);
 
   return useQuery({
@@ -7629,7 +7931,9 @@ useGetHrSalaryPermissionsId.prefetch = (
 export const useGetProcurementAdvancePayments = (
   options?: SwaggerTypescriptUseQueryOptions<OrderAdvancePayment[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<OrderAdvancePayment[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementAdvancePayments.info(configOverride);
 
   return useQuery({
@@ -7666,7 +7970,9 @@ export const useGetProcurementAdvancePaymentsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<OrderAdvancePayment>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<OrderAdvancePayment>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementAdvancePaymentsId.info(
     id,
     configOverride,
@@ -7712,7 +8018,9 @@ useGetProcurementAdvancePaymentsId.prefetch = (
 export const useGetProcurementAdvancePaymentsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementAdvancePaymentsPermissions.info(configOverride);
 
@@ -7750,7 +8058,12 @@ export const useGetProcurementApprovedOrderItems = (
   queryParams?: GetProcurementApprovedOrderItemsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovedOrderItemList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovedOrderItemList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementApprovedOrderItems.info(
     queryParams,
     configOverride,
@@ -7793,7 +8106,9 @@ useGetProcurementApprovedOrderItems.prefetch = (
 export const useGetProcurementApprovedOrderItemsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementApprovedOrderItemsPermissions.info(configOverride);
 
@@ -7831,7 +8146,12 @@ export const useGetProcurementApprovedRequestItems = (
   queryParams?: GetProcurementApprovedRequestItemsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovedRequestItemList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovedRequestItemList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementApprovedRequestItems.info(
     queryParams,
     configOverride,
@@ -7874,7 +8194,9 @@ useGetProcurementApprovedRequestItems.prefetch = (
 export const useGetProcurementApprovedRequestItemsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementApprovedRequestItemsPermissions.info(configOverride);
 
@@ -7913,7 +8235,9 @@ export const useGetProcurementInvoiceAdvanceBalanceCounter__slug = (
   queryParams: GetProcurementInvoiceAdvanceBalanceCounter__slugQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<InvoiceAdvanceBalance>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<InvoiceAdvanceBalance>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoiceAdvanceBalanceCounter__slug.info(
     counter__slug,
     queryParams,
@@ -7970,7 +8294,9 @@ export const useGetProcurementInvoiceItems = (
   queryParams?: GetProcurementInvoiceItemsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<InvoiceItemList[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<InvoiceItemList[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoiceItems.info(
     queryParams,
     configOverride,
@@ -8013,7 +8339,9 @@ useGetProcurementInvoiceItems.prefetch = (
 export const useGetProcurementInvoiceItemsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementInvoiceItemsPermissions.info(configOverride);
 
@@ -8051,7 +8379,12 @@ export const useGetProcurementInvoices = (
   queryParams?: GetProcurementInvoicesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedInvoiceListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedInvoiceListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementInvoices.info(
     queryParams,
     configOverride,
@@ -8095,7 +8428,9 @@ export const useGetProcurementInvoicesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Invoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Invoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoicesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -8141,7 +8476,12 @@ export const useGetProcurementInvoicesCounter__slugApprovalHistory = (
   queryParams?: GetProcurementInvoicesCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetProcurementInvoicesCounter__slugApprovalHistory.info(
       counter__slug,
@@ -8200,7 +8540,9 @@ export const useGetProcurementInvoicesCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Invoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Invoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoicesCounter__slugAttachments.info(
     counter__slug,
     configOverride,
@@ -8251,7 +8593,9 @@ export const useGetProcurementInvoicesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Invoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Invoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoicesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -8298,7 +8642,9 @@ useGetProcurementInvoicesCounter__slugHistory.prefetch = (
 export const useGetProcurementInvoicesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementInvoicesPermissions.info(configOverride);
 
@@ -8336,7 +8682,9 @@ export const useGetProcurementInvoicesStates = (
   queryParams?: GetProcurementInvoicesStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementInvoicesStates.info(
     queryParams,
     configOverride,
@@ -8380,7 +8728,9 @@ export const useGetProcurementOrders = (
   queryParams?: GetProcurementOrdersQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedOrderListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedOrderListList>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrders.info(
     queryParams,
     configOverride,
@@ -8424,7 +8774,9 @@ export const useGetProcurementOrdersCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Order>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Order>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrdersCounter__slug.info(
     counter__slug,
     configOverride,
@@ -8469,7 +8821,12 @@ export const useGetProcurementOrdersCounter__slugApprovalHistory = (
   queryParams?: GetProcurementOrdersCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementOrdersCounter__slugApprovalHistory.info(
     counter__slug,
     queryParams,
@@ -8526,7 +8883,9 @@ export const useGetProcurementOrdersCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Order>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Order>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrdersCounter__slugAttachments.info(
     counter__slug,
     configOverride,
@@ -8577,7 +8936,9 @@ export const useGetProcurementOrdersCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Order>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Order>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrdersCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -8624,7 +8985,9 @@ useGetProcurementOrdersCounter__slugHistory.prefetch = (
 export const useGetProcurementOrdersPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrdersPermissions.info(configOverride);
 
   return useQuery({
@@ -8660,7 +9023,9 @@ export const useGetProcurementOrdersStates = (
   queryParams?: GetProcurementOrdersStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementOrdersStates.info(
     queryParams,
     configOverride,
@@ -8704,7 +9069,9 @@ export const useGetProcurementRequestTypes = (
   queryParams?: GetProcurementRequestTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<RequestType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RequestType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestTypes.info(
     queryParams,
     configOverride,
@@ -8749,7 +9116,9 @@ export const useGetProcurementRequestTypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<RequestType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<RequestType>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestTypesId.info(id, configOverride);
 
   return useQuery({
@@ -8790,7 +9159,12 @@ export const useGetProcurementRequests = (
   queryParams?: GetProcurementRequestsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedRequestListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedRequestListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementRequests.info(
     queryParams,
     configOverride,
@@ -8834,7 +9208,9 @@ export const useGetProcurementRequestsCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Request>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Request>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestsCounter__slug.info(
     counter__slug,
     configOverride,
@@ -8880,7 +9256,12 @@ export const useGetProcurementRequestsCounter__slugApprovalHistory = (
   queryParams?: GetProcurementRequestsCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetProcurementRequestsCounter__slugApprovalHistory.info(
       counter__slug,
@@ -8939,7 +9320,9 @@ export const useGetProcurementRequestsCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Request>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Request>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestsCounter__slugAttachments.info(
     counter__slug,
     configOverride,
@@ -8990,7 +9373,9 @@ export const useGetProcurementRequestsCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Request>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Request>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestsCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -9037,7 +9422,9 @@ useGetProcurementRequestsCounter__slugHistory.prefetch = (
 export const useGetProcurementRequestsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementRequestsPermissions.info(configOverride);
 
@@ -9075,7 +9462,9 @@ export const useGetProcurementRequestsStates = (
   queryParams?: GetProcurementRequestsStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementRequestsStates.info(
     queryParams,
     configOverride,
@@ -9119,7 +9508,12 @@ export const useGetProcurementSpecialInvoiceItems = (
   queryParams?: GetProcurementSpecialInvoiceItemsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoiceItemList[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SpecialInvoiceItemList[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementSpecialInvoiceItems.info(
     queryParams,
     configOverride,
@@ -9162,7 +9556,9 @@ useGetProcurementSpecialInvoiceItems.prefetch = (
 export const useGetProcurementSpecialInvoiceItemsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementSpecialInvoiceItemsPermissions.info(configOverride);
 
@@ -9200,7 +9596,9 @@ export const useGetProcurementSpecialInvoiceTypes = (
   queryParams?: GetProcurementSpecialInvoiceTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoiceType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SpecialInvoiceType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementSpecialInvoiceTypes.info(
     queryParams,
     configOverride,
@@ -9245,7 +9643,9 @@ export const useGetProcurementSpecialInvoiceTypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoiceType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SpecialInvoiceType>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementSpecialInvoiceTypesId.info(
     id,
     configOverride,
@@ -9292,7 +9692,12 @@ export const useGetProcurementSpecialInvoices = (
   queryParams?: GetProcurementSpecialInvoicesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedSpecialInvoiceListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedSpecialInvoiceListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProcurementSpecialInvoices.info(
     queryParams,
     configOverride,
@@ -9336,7 +9741,9 @@ export const useGetProcurementSpecialInvoicesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SpecialInvoice>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementSpecialInvoicesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -9385,7 +9792,12 @@ export const useGetProcurementSpecialInvoicesCounter__slugApprovalHistory = (
   queryParams?: GetProcurementSpecialInvoicesCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetProcurementSpecialInvoicesCounter__slugApprovalHistory.info(
       counter__slug,
@@ -9444,7 +9856,9 @@ export const useGetProcurementSpecialInvoicesCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SpecialInvoice>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementSpecialInvoicesCounter__slugAttachments.info(
       counter__slug,
@@ -9497,7 +9911,9 @@ export const useGetProcurementSpecialInvoicesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<SpecialInvoice>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SpecialInvoice>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementSpecialInvoicesCounter__slugHistory.info(
       counter__slug,
@@ -9549,7 +9965,9 @@ useGetProcurementSpecialInvoicesCounter__slugHistory.prefetch = (
 export const useGetProcurementSpecialInvoicesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetProcurementSpecialInvoicesPermissions.info(configOverride);
 
@@ -9587,7 +10005,9 @@ export const useGetProcurementSpecialInvoicesStates = (
   queryParams?: GetProcurementSpecialInvoicesStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProcurementSpecialInvoicesStates.info(
     queryParams,
     configOverride,
@@ -9630,7 +10050,9 @@ useGetProcurementSpecialInvoicesStates.prefetch = (
 export const useGetProfilesAvatar = (
   options?: SwaggerTypescriptUseQueryOptions<Avatar[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Avatar[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProfilesAvatar.info(configOverride);
 
   return useQuery({
@@ -9665,7 +10087,9 @@ export const useGetProfilesAvatarId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Avatar>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Avatar>, RequestError | Error>
+> => {
   const { key, fun } = useGetProfilesAvatarId.info(id, configOverride);
 
   return useQuery({
@@ -9705,7 +10129,9 @@ useGetProfilesAvatarId.prefetch = (
 export const useGetProfilesUsers = (
   options?: SwaggerTypescriptUseQueryOptions<UserProfile[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserProfile[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProfilesUsers.info(configOverride);
 
   return useQuery({
@@ -9738,7 +10164,9 @@ useGetProfilesUsers.prefetch = (
 export const useGetProjectsAccountingtypes = (
   options?: SwaggerTypescriptUseQueryOptions<AccountingType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountingType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsAccountingtypes.info(configOverride);
 
   return useQuery({
@@ -9773,7 +10201,9 @@ export const useGetProjectsAccountingtypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<AccountingType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountingType>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsAccountingtypesId.info(id, configOverride);
 
   return useQuery({
@@ -9814,7 +10244,9 @@ export const useGetProjectsCities = (
   queryParams?: GetProjectsCitiesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<City[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<City[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCities.info(queryParams, configOverride);
 
   return useQuery({
@@ -9853,7 +10285,7 @@ export const useGetProjectsCitiesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<City>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<City>, RequestError | Error>> => {
   const { key, fun } = useGetProjectsCitiesId.info(id, configOverride);
 
   return useQuery({
@@ -9894,7 +10326,9 @@ export const useGetProjectsCompanies = (
   queryParams?: GetProjectsCompaniesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedCompanyList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedCompanyList>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCompanies.info(
     queryParams,
     configOverride,
@@ -9938,7 +10372,9 @@ export const useGetProjectsCompaniesAvailable = (
   queryParams?: GetProjectsCompaniesAvailableQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CompanyAvailable[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<CompanyAvailable[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCompaniesAvailable.info(
     queryParams,
     configOverride,
@@ -9981,7 +10417,9 @@ useGetProjectsCompaniesAvailable.prefetch = (
 export const useGetProjectsCompaniesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCompaniesPermissions.info(configOverride);
 
   return useQuery({
@@ -10017,7 +10455,9 @@ export const useGetProjectsCompaniesSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Company>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Company>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCompaniesSlug.info(slug, configOverride);
 
   return useQuery({
@@ -10055,7 +10495,9 @@ export const useGetProjectsCompaniesSlugHistory = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Company>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Company>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCompaniesSlugHistory.info(
     slug,
     configOverride,
@@ -10099,7 +10541,9 @@ export const useGetProjectsCountries = (
   queryParams?: GetProjectsCountriesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Country[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Country[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCountries.info(
     queryParams,
     configOverride,
@@ -10144,7 +10588,9 @@ export const useGetProjectsCountriesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Country>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Country>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsCountriesId.info(id, configOverride);
 
   return useQuery({
@@ -10185,7 +10631,9 @@ export const useGetProjectsDistricts = (
   queryParams?: GetProjectsDistrictsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<District[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<District[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsDistricts.info(
     queryParams,
     configOverride,
@@ -10230,7 +10678,9 @@ export const useGetProjectsDistrictsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<District>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<District>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsDistrictsId.info(id, configOverride);
 
   return useQuery({
@@ -10271,7 +10721,12 @@ export const useGetProjectsProjects = (
   queryParams?: GetProjectsProjectsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedProjectListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedProjectListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetProjectsProjects.info(queryParams, configOverride);
 
   return useQuery({
@@ -10309,7 +10764,9 @@ export const useGetProjectsProjectsAvailable = (
   queryParams?: GetProjectsProjectsAvailableQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ProjectAvailable[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProjectAvailable[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjectsAvailable.info(
     queryParams,
     configOverride,
@@ -10353,7 +10810,9 @@ export const useGetProjectsProjectsPermissions = (
   queryParams?: GetProjectsProjectsPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjectsPermissions.info(
     queryParams,
     configOverride,
@@ -10398,7 +10857,9 @@ export const useGetProjectsProjectsSlug = (
   queryParams?: GetProjectsProjectsSlugQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Project>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Project>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjectsSlug.info(
     slug,
     queryParams,
@@ -10447,7 +10908,9 @@ export const useGetProjectsProjectsSlugHistory = (
   queryParams?: GetProjectsProjectsSlugHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Project>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Project>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjectsSlugHistory.info(
     slug,
     queryParams,
@@ -10497,7 +10960,9 @@ export const useGetProjectsProjectsSlugResponsibilities = (
   queryParams?: GetProjectsProjectsSlugResponsibilitiesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Project>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Project>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjectsSlugResponsibilities.info(
     slug,
     queryParams,
@@ -10553,7 +11018,9 @@ useGetProjectsProjectsSlugResponsibilities.prefetch = (
 export const useGetProjectsProjecttypes = (
   options?: SwaggerTypescriptUseQueryOptions<ProjectTypeParam[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProjectTypeParam[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjecttypes.info(configOverride);
 
   return useQuery({
@@ -10588,7 +11055,9 @@ export const useGetProjectsProjecttypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ProjectTypeParam>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProjectTypeParam>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsProjecttypesId.info(id, configOverride);
 
   return useQuery({
@@ -10628,7 +11097,9 @@ useGetProjectsProjecttypesId.prefetch = (
 export const useGetProjectsResponsibles = (
   options?: SwaggerTypescriptUseQueryOptions<Responsible[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Responsible[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsResponsibles.info(configOverride);
 
   return useQuery({
@@ -10663,7 +11134,9 @@ export const useGetProjectsResponsiblesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Responsible>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Responsible>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsResponsiblesId.info(id, configOverride);
 
   return useQuery({
@@ -10703,7 +11176,9 @@ useGetProjectsResponsiblesId.prefetch = (
 export const useGetProjectsResponsibletypes = (
   options?: SwaggerTypescriptUseQueryOptions<ResponsibleTypeParam[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ResponsibleTypeParam[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsResponsibletypes.info(configOverride);
 
   return useQuery({
@@ -10738,7 +11213,9 @@ export const useGetProjectsResponsibletypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ResponsibleTypeParam>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ResponsibleTypeParam>, RequestError | Error>
+> => {
   const { key, fun } = useGetProjectsResponsibletypesId.info(
     id,
     configOverride,
@@ -10785,7 +11262,9 @@ export const useGetRatesRates = (
   queryParams: GetRatesRatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Rate[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Rate[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetRatesRates.info(queryParams, configOverride);
 
   return useQuery({
@@ -10824,7 +11303,7 @@ export const useGetRatesRatesId = (
   id: number,
   options?: SwaggerTypescriptUseQueryOptions<Rate>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<Rate>, RequestError | Error>> => {
   const { key, fun } = useGetRatesRatesId.info(id, configOverride);
 
   return useQuery({
@@ -10865,7 +11344,9 @@ export const useGetSubcontractsContractCategories = (
   queryParams?: GetSubcontractsContractCategoriesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ContractCategory[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ContractCategory[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractCategories.info(
     queryParams,
     configOverride,
@@ -10910,7 +11391,9 @@ export const useGetSubcontractsContractCategoriesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ContractCategory>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ContractCategory>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractCategoriesId.info(
     id,
     configOverride,
@@ -10957,7 +11440,12 @@ export const useGetSubcontractsContractCollateralReason = (
   queryParams?: GetSubcontractsContractCollateralReasonQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralReason[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ContractCollateralReason[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralReason.info(
     queryParams,
     configOverride,
@@ -11003,7 +11491,12 @@ export const useGetSubcontractsContractCollateralReasonId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralReason>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ContractCollateralReason>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralReasonId.info(
     id,
     configOverride,
@@ -11050,7 +11543,12 @@ export const useGetSubcontractsContractCollateralStatus = (
   queryParams?: GetSubcontractsContractCollateralStatusQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralStatus[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ContractCollateralStatus[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralStatus.info(
     queryParams,
     configOverride,
@@ -11096,7 +11594,12 @@ export const useGetSubcontractsContractCollateralStatusId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralStatus>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ContractCollateralStatus>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralStatusId.info(
     id,
     configOverride,
@@ -11143,7 +11646,12 @@ export const useGetSubcontractsContractCollateralTypes = (
   queryParams?: GetSubcontractsContractCollateralTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ContractCollateralType[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralTypes.info(
     queryParams,
     configOverride,
@@ -11189,7 +11697,9 @@ export const useGetSubcontractsContractCollateralTypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ContractCollateralType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ContractCollateralType>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractCollateralTypesId.info(
     id,
     configOverride,
@@ -11236,7 +11746,12 @@ export const useGetSubcontractsContractCollaterals = (
   queryParams?: GetSubcontractsContractCollateralsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedContractCollateralListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedContractCollateralListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContractCollaterals.info(
     queryParams,
     configOverride,
@@ -11279,7 +11794,9 @@ useGetSubcontractsContractCollaterals.prefetch = (
 export const useGetSubcontractsContractCollateralsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsContractCollateralsPermissions.info(configOverride);
 
@@ -11317,7 +11834,12 @@ export const useGetSubcontractsContracts = (
   queryParams?: GetSubcontractsContractsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedContractListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedContractListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsContracts.info(
     queryParams,
     configOverride,
@@ -11361,7 +11883,9 @@ export const useGetSubcontractsContractsCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Contract>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contract>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractsCounter__slug.info(
     counter__slug,
     configOverride,
@@ -11407,7 +11931,12 @@ export const useGetSubcontractsContractsCounter__slugApprovalHistory = (
   queryParams?: GetSubcontractsContractsCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetSubcontractsContractsCounter__slugApprovalHistory.info(
       counter__slug,
@@ -11466,7 +11995,9 @@ export const useGetSubcontractsContractsCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Contract>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contract>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractsCounter__slugAttachments.info(
     counter__slug,
     configOverride,
@@ -11517,7 +12048,9 @@ export const useGetSubcontractsContractsCounter__slugCopy_contract = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Contract>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contract>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsContractsCounter__slugCopy_contract.info(
       counter__slug,
@@ -11570,7 +12103,9 @@ export const useGetSubcontractsContractsCounter__slugCreate_progress = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Progress>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Progress>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsContractsCounter__slugCreate_progress.info(
       counter__slug,
@@ -11624,7 +12159,9 @@ export const useGetSubcontractsContractsCounter__slugDeductionReturnType = (
   type: string,
   options?: SwaggerTypescriptUseQueryOptions<DeductionReturn>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<DeductionReturn>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsContractsCounter__slugDeductionReturnType.info(
       counter__slug,
@@ -11683,7 +12220,9 @@ export const useGetSubcontractsContractsCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Contract>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contract>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractsCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -11733,7 +12272,9 @@ useGetSubcontractsContractsCounter__slugHistory.prefetch = (
 export const useGetSubcontractsContractsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsContractsPermissions.info(configOverride);
 
@@ -11771,7 +12312,9 @@ export const useGetSubcontractsContractsStates = (
   queryParams?: GetSubcontractsContractsStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsContractsStates.info(
     queryParams,
     configOverride,
@@ -11815,7 +12358,12 @@ export const useGetSubcontractsDeductionReturns = (
   queryParams?: GetSubcontractsDeductionReturnsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedDeductionReturnListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedDeductionReturnListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsDeductionReturns.info(
     queryParams,
     configOverride,
@@ -11859,7 +12407,9 @@ export const useGetSubcontractsDeductionReturnsCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<DeductionReturn>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<DeductionReturn>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsDeductionReturnsCounter__slug.info(
     counter__slug,
     configOverride,
@@ -11911,7 +12461,12 @@ export const useGetSubcontractsDeductionReturnsCounter__slugApprovalHistory = (
   queryParams?: GetSubcontractsDeductionReturnsCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetSubcontractsDeductionReturnsCounter__slugApprovalHistory.info(
       counter__slug,
@@ -11970,7 +12525,9 @@ export const useGetSubcontractsDeductionReturnsCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<DeductionReturn>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<DeductionReturn>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsDeductionReturnsCounter__slugAttachments.info(
       counter__slug,
@@ -12023,7 +12580,9 @@ export const useGetSubcontractsDeductionReturnsCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<DeductionReturn>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<DeductionReturn>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsDeductionReturnsCounter__slugHistory.info(
       counter__slug,
@@ -12075,7 +12634,9 @@ useGetSubcontractsDeductionReturnsCounter__slugHistory.prefetch = (
 export const useGetSubcontractsDeductionReturnsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsDeductionReturnsPermissions.info(configOverride);
 
@@ -12113,7 +12674,9 @@ export const useGetSubcontractsDeductionReturnsStates = (
   queryParams?: GetSubcontractsDeductionReturnsStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsDeductionReturnsStates.info(
     queryParams,
     configOverride,
@@ -12158,7 +12721,9 @@ export const useGetSubcontractsProgressAdditionTypes = (
   queryParams?: GetSubcontractsProgressAdditionTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ProgressAdditionType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProgressAdditionType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressAdditionTypes.info(
     queryParams,
     configOverride,
@@ -12203,7 +12768,9 @@ export const useGetSubcontractsProgressAdditionTypesSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<ProgressAdditionType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProgressAdditionType>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressAdditionTypesSlug.info(
     slug,
     configOverride,
@@ -12247,7 +12814,12 @@ export const useGetSubcontractsProgressDeductionTypes = (
   queryParams?: GetSubcontractsProgressDeductionTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ProgressDeductionType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ProgressDeductionType[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsProgressDeductionTypes.info(
     queryParams,
     configOverride,
@@ -12292,7 +12864,9 @@ export const useGetSubcontractsProgressDeductionTypesSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<ProgressDeductionType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProgressDeductionType>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressDeductionTypesSlug.info(
     slug,
     configOverride,
@@ -12336,7 +12910,9 @@ export const useGetSubcontractsProgressItems = (
   queryParams?: GetSubcontractsProgressItemsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ProgressItemList[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ProgressItemList[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressItems.info(
     queryParams,
     configOverride,
@@ -12379,7 +12955,9 @@ useGetSubcontractsProgressItems.prefetch = (
 export const useGetSubcontractsProgressItemsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsProgressItemsPermissions.info(configOverride);
 
@@ -12417,7 +12995,12 @@ export const useGetSubcontractsProgresses = (
   queryParams?: GetSubcontractsProgressesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedProgressListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedProgressListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubcontractsProgresses.info(
     queryParams,
     configOverride,
@@ -12461,7 +13044,9 @@ export const useGetSubcontractsProgressesCounter__slug = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Progress>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Progress>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressesCounter__slug.info(
     counter__slug,
     configOverride,
@@ -12510,7 +13095,12 @@ export const useGetSubcontractsProgressesCounter__slugApprovalHistory = (
   queryParams?: GetSubcontractsProgressesCounter__slugApprovalHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedApprovalHistoryList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedApprovalHistoryList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetSubcontractsProgressesCounter__slugApprovalHistory.info(
       counter__slug,
@@ -12569,7 +13159,9 @@ export const useGetSubcontractsProgressesCounter__slugAttachments = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Progress>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Progress>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsProgressesCounter__slugAttachments.info(
       counter__slug,
@@ -12622,7 +13214,9 @@ export const useGetSubcontractsProgressesCounter__slugHistory = (
   counter__slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Progress>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Progress>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressesCounter__slugHistory.info(
     counter__slug,
     configOverride,
@@ -12672,7 +13266,9 @@ useGetSubcontractsProgressesCounter__slugHistory.prefetch = (
 export const useGetSubcontractsProgressesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsProgressesPermissions.info(configOverride);
 
@@ -12710,7 +13306,9 @@ export const useGetSubcontractsProgressesStates = (
   queryParams?: GetSubcontractsProgressesStatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<State[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<State[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsProgressesStates.info(
     queryParams,
     configOverride,
@@ -12754,7 +13352,9 @@ export const useGetSubcontractsRevisions = (
   queryParams?: GetSubcontractsRevisionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedRevisionList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PaginatedRevisionList>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsRevisions.info(
     queryParams,
     configOverride,
@@ -12799,7 +13399,9 @@ export const useGetSubcontractsRevisionsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Revision>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Revision>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubcontractsRevisionsId.info(id, configOverride);
 
   return useQuery({
@@ -12839,7 +13441,9 @@ useGetSubcontractsRevisionsId.prefetch = (
 export const useGetSubcontractsRevisionsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSubcontractsRevisionsPermissions.info(configOverride);
 
@@ -12877,7 +13481,12 @@ export const useGetSuppliersAccountingCodes = (
   queryParams?: GetSuppliersAccountingCodesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SupplierAccountingCode[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SupplierAccountingCode[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSuppliersAccountingCodes.info(
     queryParams,
     configOverride,
@@ -12922,7 +13531,9 @@ export const useGetSuppliersAccountingCodesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SupplierAccountingCode>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierAccountingCode>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersAccountingCodesId.info(
     id,
     configOverride,
@@ -12970,7 +13581,9 @@ export const useGetSuppliersAdvanceBalancesSlug = (
   queryParams: GetSuppliersAdvanceBalancesSlugQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<InvoiceAdvanceBalance>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<InvoiceAdvanceBalance>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersAdvanceBalancesSlug.info(
     slug,
     queryParams,
@@ -13019,7 +13632,9 @@ export const useGetSuppliersBankAccounts = (
   queryParams?: GetSuppliersBankAccountsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SupplierBankAccount[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierBankAccount[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersBankAccounts.info(
     queryParams,
     configOverride,
@@ -13064,7 +13679,9 @@ export const useGetSuppliersBankAccountsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SupplierBankAccount>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierBankAccount>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersBankAccountsId.info(id, configOverride);
 
   return useQuery({
@@ -13105,7 +13722,9 @@ export const useGetSuppliersContacts = (
   queryParams?: GetSuppliersContactsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Contact[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contact[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersContacts.info(
     queryParams,
     configOverride,
@@ -13150,7 +13769,9 @@ export const useGetSuppliersContactsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Contact>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Contact>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersContactsId.info(id, configOverride);
 
   return useQuery({
@@ -13190,7 +13811,9 @@ useGetSuppliersContactsId.prefetch = (
 export const useGetSuppliersContactsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersContactsPermissions.info(configOverride);
 
   return useQuery({
@@ -13226,7 +13849,9 @@ export const useGetSuppliersReviewAnswers = (
   queryParams?: GetSuppliersReviewAnswersQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Answer[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Answer[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewAnswers.info(
     queryParams,
     configOverride,
@@ -13271,7 +13896,9 @@ export const useGetSuppliersReviewAnswersId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Answer>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Answer>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewAnswersId.info(id, configOverride);
 
   return useQuery({
@@ -13312,7 +13939,12 @@ export const useGetSuppliersReviewForms = (
   queryParams?: GetSuppliersReviewFormsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedReviewsListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedReviewsListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSuppliersReviewForms.info(
     queryParams,
     configOverride,
@@ -13355,7 +13987,9 @@ useGetSuppliersReviewForms.prefetch = (
 export const useGetSuppliersReviewFormsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSuppliersReviewFormsPermissions.info(configOverride);
 
@@ -13393,7 +14027,9 @@ export const useGetSuppliersReviewFormsSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Review>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Review>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewFormsSlug.info(
     slug,
     configOverride,
@@ -13437,7 +14073,9 @@ export const useGetSuppliersReviewFormsSlugHistory = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Review>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Review>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewFormsSlugHistory.info(
     slug,
     configOverride,
@@ -13481,7 +14119,9 @@ export const useGetSuppliersReviewQuestions = (
   queryParams?: GetSuppliersReviewQuestionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReviewQuestion[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReviewQuestion[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewQuestions.info(
     queryParams,
     configOverride,
@@ -13526,7 +14166,9 @@ export const useGetSuppliersReviewQuestionsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ReviewQuestion>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReviewQuestion>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewQuestionsId.info(
     id,
     configOverride,
@@ -13573,7 +14215,9 @@ export const useGetSuppliersReviewTemplates = (
   queryParams?: GetSuppliersReviewTemplatesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReviewTemplateList[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReviewTemplateList[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewTemplates.info(
     queryParams,
     configOverride,
@@ -13616,7 +14260,9 @@ useGetSuppliersReviewTemplates.prefetch = (
 export const useGetSuppliersReviewTemplatesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetSuppliersReviewTemplatesPermissions.info(configOverride);
 
@@ -13654,7 +14300,9 @@ export const useGetSuppliersReviewTemplatesSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<ReviewTemplate>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReviewTemplate>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewTemplatesSlug.info(
     slug,
     configOverride,
@@ -13698,7 +14346,9 @@ export const useGetSuppliersReviewTemplatesSlugHistory = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<ReviewTemplate>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReviewTemplate>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersReviewTemplatesSlugHistory.info(
     slug,
     configOverride,
@@ -13742,7 +14392,9 @@ export const useGetSuppliersSupplierActivityTypes = (
   queryParams?: GetSuppliersSupplierActivityTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ActivityType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ActivityType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierActivityTypes.info(
     queryParams,
     configOverride,
@@ -13787,7 +14439,9 @@ export const useGetSuppliersSupplierActivityTypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<ActivityType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ActivityType>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierActivityTypesId.info(
     id,
     configOverride,
@@ -13834,7 +14488,9 @@ export const useGetSuppliersSupplierBranches = (
   queryParams?: GetSuppliersSupplierBranchesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Branch[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Branch[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierBranches.info(
     queryParams,
     configOverride,
@@ -13879,7 +14535,9 @@ export const useGetSuppliersSupplierBranchesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Branch>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Branch>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierBranchesId.info(
     id,
     configOverride,
@@ -13926,7 +14584,9 @@ export const useGetSuppliersSupplierTypes = (
   queryParams?: GetSuppliersSupplierTypesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SupplierType[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierType[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierTypes.info(
     queryParams,
     configOverride,
@@ -13971,7 +14631,9 @@ export const useGetSuppliersSupplierTypesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<SupplierType>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierType>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSupplierTypesId.info(id, configOverride);
 
   return useQuery({
@@ -14075,7 +14737,9 @@ export const useGetSuppliersSuppliersAutocomplete = (
   queryParams?: GetSuppliersSuppliersAutocompleteQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SupplierAutocomplete[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SupplierAutocomplete[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSuppliersAutocomplete.info(
     queryParams,
     configOverride,
@@ -14118,7 +14782,9 @@ useGetSuppliersSuppliersAutocomplete.prefetch = (
 export const useGetSuppliersSuppliersPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSuppliersPermissions.info(configOverride);
 
   return useQuery({
@@ -14154,7 +14820,9 @@ export const useGetSuppliersSuppliersSlug = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Supplier>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Supplier>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSuppliersSlug.info(slug, configOverride);
 
   return useQuery({
@@ -14192,7 +14860,9 @@ export const useGetSuppliersSuppliersSlugHistory = (
   slug: string,
   options?: SwaggerTypescriptUseQueryOptions<Supplier>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Supplier>, RequestError | Error>
+> => {
   const { key, fun } = useGetSuppliersSuppliersSlugHistory.info(
     slug,
     configOverride,
@@ -14236,7 +14906,12 @@ export const useGetWarehouseProducts = (
   queryParams: GetWarehouseProductsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedProductListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedProductListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetWarehouseProducts.info(
     queryParams,
     configOverride,
@@ -14282,7 +14957,9 @@ export const useGetWarehouseProductsId = (
   queryParams: GetWarehouseProductsIdQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Product>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Product>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseProductsId.info(
     id,
     queryParams,
@@ -14335,7 +15012,9 @@ export const useGetWarehouseProductsIdAttachments = (
   queryParams: GetWarehouseProductsIdAttachmentsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Product>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Product>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseProductsIdAttachments.info(
     id,
     queryParams,
@@ -14389,7 +15068,9 @@ export const useGetWarehouseProductsIdHistory = (
   queryParams: GetWarehouseProductsIdHistoryQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Product>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Product>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseProductsIdHistory.info(
     id,
     queryParams,
@@ -14442,7 +15123,12 @@ export const useGetWarehouseProductsIdTransactions = (
   queryParams: GetWarehouseProductsIdTransactionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PaginatedTransactionListList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<PaginatedTransactionListList>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetWarehouseProductsIdTransactions.info(
     id,
     queryParams,
@@ -14494,7 +15180,9 @@ export const useGetWarehouseProductsPermissions = (
   queryParams: GetWarehouseProductsPermissionsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseProductsPermissions.info(
     queryParams,
     configOverride,
@@ -14537,7 +15225,9 @@ useGetWarehouseProductsPermissions.prefetch = (
 export const useGetWarehouseTransactions = (
   options?: SwaggerTypescriptUseQueryOptions<TransactionList[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TransactionList[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseTransactions.info(configOverride);
 
   return useQuery({
@@ -14572,7 +15262,9 @@ export const useGetWarehouseTransactionsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<TransactionList>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TransactionList>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseTransactionsId.info(id, configOverride);
 
   return useQuery({
@@ -14612,7 +15304,9 @@ useGetWarehouseTransactionsId.prefetch = (
 export const useGetWarehouseTransactionsPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetWarehouseTransactionsPermissions.info(configOverride);
 
@@ -14713,7 +15407,9 @@ export const useGetWarehouseWarehousesAvailable = (
   queryParams?: GetWarehouseWarehousesAvailableQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Warehouse[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Warehouse[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseWarehousesAvailable.info(
     queryParams,
     configOverride,
@@ -14758,7 +15454,9 @@ export const useGetWarehouseWarehousesId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Warehouse>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Warehouse>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseWarehousesId.info(id, configOverride);
 
   return useQuery({
@@ -14800,7 +15498,9 @@ export const useGetWarehouseWarehousesIdHistory = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Warehouse>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Warehouse>, RequestError | Error>
+> => {
   const { key, fun } = useGetWarehouseWarehousesIdHistory.info(
     id,
     configOverride,
@@ -14846,7 +15546,9 @@ useGetWarehouseWarehousesIdHistory.prefetch = (
 export const useGetWarehouseWarehousesPermissions = (
   options?: SwaggerTypescriptUseQueryOptions<Permissions>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Permissions>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetWarehouseWarehousesPermissions.info(configOverride);
 

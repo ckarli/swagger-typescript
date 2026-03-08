@@ -135,7 +135,9 @@ export const useGetProductsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Product>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useSuspenseQuery<SwaggerResponse<Product>, RequestError | Error>
+> => {
   const { key, fun } = useGetProductsId.info(id, configOverride);
 
   return useSuspenseQuery({
@@ -170,7 +172,9 @@ export const useGetUsersId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<User>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useSuspenseQuery<SwaggerResponse<User>, RequestError | Error>
+> => {
   const { key, fun } = useGetUsersId.info(id, configOverride);
 
   return useSuspenseQuery({
@@ -266,7 +270,9 @@ export const useGetProducts = (
   queryParams?: GetProductsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Product[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useSuspenseQuery<SwaggerResponse<Product[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetProducts.info(queryParams, configOverride);
 
   return useSuspenseQuery({
@@ -304,7 +310,9 @@ export const useGetProductsId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<Product>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useSuspenseQuery<SwaggerResponse<Product>, RequestError | Error>
+> => {
   const { key, fun } = useGetProductsId.info(id, configOverride);
 
   return useSuspenseQuery({
@@ -339,7 +347,9 @@ export const useGetUsersId = (
   id: string,
   options?: SwaggerTypescriptUseQueryOptions<User>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useSuspenseQuery<SwaggerResponse<User>, RequestError | Error>
+> => {
   const { key, fun } = useGetUsersId.info(id, configOverride);
 
   return useSuspenseQuery({

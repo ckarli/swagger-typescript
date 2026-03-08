@@ -2030,7 +2030,9 @@ export const useGetAccessUserWalletIdLogicalAction = (
     | \\"HitoBitFee\\",
   options?: SwaggerTypescriptUseQueryOptions<boolean>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<boolean>, RequestError | Error>
+> => {
   const { key, fun } = useGetAccessUserWalletIdLogicalAction.info(
     userWalletId,
     logicalAction,
@@ -2120,7 +2122,9 @@ useGetAccessUserWalletIdLogicalAction.prefetch = (
 export const useGetBank = (
   options?: SwaggerTypescriptUseQueryOptions<BankApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetBank.info(configOverride);
 
   return useQuery({
@@ -2155,7 +2159,12 @@ useGetBank.prefetch = (
 export const useGetBusinessUserCategory = (
   options?: SwaggerTypescriptUseQueryOptions<BusinessCategoryApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<BusinessCategoryApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserCategory.info(configOverride);
 
   return useQuery({
@@ -2191,7 +2200,12 @@ export const useGetBusinessUserConnection = (
   queryParams?: GetBusinessUserConnectionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SubUserConnectionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserConnectionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserConnection.info(
     queryParams,
     configOverride,
@@ -2240,7 +2254,12 @@ export const useGetBusinessUserConnectionActive = (
   queryParams?: GetBusinessUserConnectionActiveQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<SubUserConnectionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserConnectionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserConnectionActive.info(
     queryParams,
     configOverride,
@@ -2290,7 +2309,12 @@ export const useGetBusinessUserConnectionConnectionIdActivity = (
   connectionId: number,
   options?: SwaggerTypescriptUseQueryOptions<SubUserActivityApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserActivityApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserConnectionConnectionIdActivity.info(
     connectionId,
     configOverride,
@@ -2345,7 +2369,9 @@ export const useGetBusinessUserConnectionConnectionIdEpay = (
   queryParams?: GetBusinessUserConnectionConnectionIdEpayQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<EpayRequestApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<EpayRequestApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetBusinessUserConnectionConnectionIdEpay.info(
     connectionId,
     queryParams,
@@ -2408,7 +2434,12 @@ export const useGetBusinessUserConnectionConnectionIdPermission = (
   connectionId: number,
   options?: SwaggerTypescriptUseQueryOptions<SubUserPermissionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserPermissionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserConnectionConnectionIdPermission.info(
     connectionId,
     configOverride,
@@ -2462,7 +2493,9 @@ export const useGetEpayRequest = (
   queryParams?: GetEpayRequestQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<EpayRequestApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<EpayRequestApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequest.info(queryParams, configOverride);
 
   return useQuery({
@@ -2499,7 +2532,9 @@ useGetEpayRequest.prefetch = (
 export const useGetEpayRequestAudiencesRecent = (
   options?: SwaggerTypescriptUseQueryOptions<ContactApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ContactApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestAudiencesRecent.info(configOverride);
 
   return useQuery({
@@ -2535,7 +2570,9 @@ export const useGetEpayRequestCount = (
   queryParams?: GetEpayRequestCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestCount.info(queryParams, configOverride);
 
   return useQuery({
@@ -2573,7 +2610,12 @@ export const useGetEpayRequestEpayTokenDetail = (
   epayToken: string,
   options?: SwaggerTypescriptUseQueryOptions<EpayRequestPublicInfoApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<EpayRequestPublicInfoApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetEpayRequestEpayTokenDetail.info(
     epayToken,
     configOverride,
@@ -2620,7 +2662,9 @@ export const useGetEpayRequestEpayTokenQrcode = (
   epayToken: string,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestEpayTokenQrcode.info(
     epayToken,
     configOverride,
@@ -2667,7 +2711,9 @@ export const useGetEpayRequestExcel = (
   queryParams?: GetEpayRequestExcelQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestExcel.info(queryParams, configOverride);
 
   return useQuery({
@@ -2710,7 +2756,12 @@ export const useGetEpayRequestForMe = (
   queryParams?: GetEpayRequestForMeQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<EpayRequestForUserQuery[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<EpayRequestForUserQuery[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetEpayRequestForMe.info(queryParams, configOverride);
 
   return useQuery({
@@ -2748,7 +2799,9 @@ export const useGetEpayRequestForMeCount = (
   queryParams?: GetEpayRequestForMeCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestForMeCount.info(
     queryParams,
     configOverride,
@@ -2792,7 +2845,9 @@ export const useGetEpayRequestForMeReport = (
   queryParams?: GetEpayRequestForMeReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReportApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReportApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestForMeReport.info(
     queryParams,
     configOverride,
@@ -2844,7 +2899,9 @@ export const useGetEpayRequestPosQrAccountNumber = (
   queryParams?: GetEpayRequestPosQrAccountNumberQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestPosQrAccountNumber.info(
     accountNumber,
     queryParams,
@@ -2901,7 +2958,9 @@ export const useGetEpayRequestReport = (
   queryParams?: GetEpayRequestReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReportApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReportApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestReport.info(
     queryParams,
     configOverride,
@@ -2948,7 +3007,12 @@ export const useGetEpayRequestUserWalletIdCommission = (
   queryParams?: GetEpayRequestUserWalletIdCommissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetEpayRequestUserWalletIdCommission.info(
     userWalletId,
     queryParams,
@@ -3005,7 +3069,9 @@ export const useGetEpayRequestUserWalletIdCreators = (
   userWalletId: number,
   options?: SwaggerTypescriptUseQueryOptions<UserMinimalDto[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserMinimalDto[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetEpayRequestUserWalletIdCreators.info(
     userWalletId,
     configOverride,
@@ -3048,7 +3114,9 @@ useGetEpayRequestUserWalletIdCreators.prefetch = (
 export const useGetError = (
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetError.info(configOverride);
 
   return useQuery({
@@ -3081,7 +3149,9 @@ useGetError.prefetch = (
 export const useGetErrorLocal = (
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetErrorLocal.info(configOverride);
 
   return useQuery({
@@ -3115,7 +3185,9 @@ export const useGetErrorStatusCode = (
   code: number,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetErrorStatusCode.info(code, configOverride);
 
   return useQuery({
@@ -3156,7 +3228,9 @@ export const useGetFileFileGuid = (
   fileGuid: string,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetFileFileGuid.info(fileGuid, configOverride);
 
   return useQuery({
@@ -3197,7 +3271,12 @@ export const useGetGroupTransferCommission = (
   queryParams?: GetGroupTransferCommissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetGroupTransferCommission.info(
     queryParams,
     configOverride,
@@ -3243,7 +3322,9 @@ export const useGetIntegration = (
   queryParams?: GetIntegrationQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DriverInfoResult>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<DriverInfoResult>, RequestError | Error>
+> => {
   const { key, fun } = useGetIntegration.info(queryParams, configOverride);
 
   return useQuery({
@@ -3281,7 +3362,9 @@ export const useGetKpi = (
   queryParams?: GetKpiQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<KpiResult[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<KpiResult[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetKpi.info(queryParams, configOverride);
 
   return useQuery({
@@ -3319,7 +3402,9 @@ export const useGetKpiCurrent = (
   queryParams?: GetKpiCurrentQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<KpiResult[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<KpiResult[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetKpiCurrent.info(queryParams, configOverride);
 
   return useQuery({
@@ -3357,7 +3442,9 @@ export const useGetKpiLast = (
   queryParams?: GetKpiLastQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<KpiResult[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<KpiResult[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetKpiLast.info(queryParams, configOverride);
 
   return useQuery({
@@ -3396,7 +3483,12 @@ useGetKpiLast.prefetch = (
 export const useGetNotificationIa = (
   options?: SwaggerTypescriptUseQueryOptions<ImportantActionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ImportantActionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetNotificationIa.info(configOverride);
 
   return useQuery({
@@ -3431,7 +3523,9 @@ useGetNotificationIa.prefetch = (
 export const useGetNotificationNotif = (
   options?: SwaggerTypescriptUseQueryOptions<NotificationApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<NotificationApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetNotificationNotif.info(configOverride);
 
   return useQuery({
@@ -3465,7 +3559,12 @@ export const useGetNotificationUnread = (
   queryParams?: GetNotificationUnreadQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<UnreadNotificationCountApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<UnreadNotificationCountApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetNotificationUnread.info(
     queryParams,
     configOverride,
@@ -3513,7 +3612,9 @@ export const useGetPosAccountNumber = (
   queryParams?: GetPosAccountNumberQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<PosLandingPageApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PosLandingPageApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetPosAccountNumber.info(
     accountNumber,
     queryParams,
@@ -3573,7 +3674,9 @@ export const useGetReceiptEpayToken = (
   epayToken: string,
   options?: SwaggerTypescriptUseQueryOptions<BankReceiptApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankReceiptApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetReceiptEpayToken.info(epayToken, configOverride);
 
   return useQuery({
@@ -3617,7 +3720,9 @@ export const useGetReceiptWalletEpayToken = (
   epayToken: string,
   options?: SwaggerTypescriptUseQueryOptions<WalletReceiptApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<WalletReceiptApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetReceiptWalletEpayToken.info(
     epayToken,
     configOverride,
@@ -3668,7 +3773,9 @@ useGetReceiptWalletEpayToken.prefetch = (
 export const useGetResellerUser = (
   options?: SwaggerTypescriptUseQueryOptions<ResellerApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ResellerApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUser.info(configOverride);
 
   return useQuery({
@@ -3710,7 +3817,12 @@ export const useGetResellerUserDashboardCommissionReport = (
   queryParams?: GetResellerUserDashboardCommissionReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DateReportApiModelOfDecimal[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<DateReportApiModelOfDecimal[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserDashboardCommissionReport.info(
     queryParams,
     configOverride,
@@ -3766,7 +3878,9 @@ export const useGetResellerUserDashboardCommissionSum = (
   queryParams?: GetResellerUserDashboardCommissionSumQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserDashboardCommissionSum.info(
     queryParams,
     configOverride,
@@ -3819,7 +3933,9 @@ export const useGetResellerUserDashboardIntroducedCount = (
   queryParams?: GetResellerUserDashboardIntroducedCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserDashboardIntroducedCount.info(
     queryParams,
     configOverride,
@@ -3872,7 +3988,12 @@ export const useGetResellerUserDashboardIntroducedReport = (
   queryParams?: GetResellerUserDashboardIntroducedReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DateReportApiModelOfInteger[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<DateReportApiModelOfInteger[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserDashboardIntroducedReport.info(
     queryParams,
     configOverride,
@@ -3928,7 +4049,9 @@ export const useGetResellerUserDashboardLinksCount = (
   queryParams?: GetResellerUserDashboardLinksCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserDashboardLinksCount.info(
     queryParams,
     configOverride,
@@ -3980,7 +4103,9 @@ export const useGetResellerUserDashboardLinksPaidCount = (
   queryParams?: GetResellerUserDashboardLinksPaidCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserDashboardLinksPaidCount.info(
     queryParams,
     configOverride,
@@ -4033,7 +4158,12 @@ export const useGetResellerUserDashboardLinksPaidReport = (
   queryParams?: GetResellerUserDashboardLinksPaidReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DateReportApiModelOfInteger[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<DateReportApiModelOfInteger[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserDashboardLinksPaidReport.info(
     queryParams,
     configOverride,
@@ -4086,7 +4216,12 @@ export const useGetResellerUserDashboardLinksReport = (
   queryParams?: GetResellerUserDashboardLinksReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DateReportApiModelOfInteger[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<DateReportApiModelOfInteger[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserDashboardLinksReport.info(
     queryParams,
     configOverride,
@@ -4138,7 +4273,9 @@ export const useGetResellerUserDashboardTransactionsCount = (
   queryParams?: GetResellerUserDashboardTransactionsCountQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AggregationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AggregationApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserDashboardTransactionsCount.info(
     queryParams,
     configOverride,
@@ -4194,7 +4331,12 @@ export const useGetResellerUserDashboardTransactionsReport = (
   queryParams?: GetResellerUserDashboardTransactionsReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<DateReportApiModelOfInteger[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<DateReportApiModelOfInteger[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserDashboardTransactionsReport.info(
     queryParams,
     configOverride,
@@ -4247,7 +4389,9 @@ export const useGetResellerUserIntroduced = (
   queryParams?: GetResellerUserIntroducedQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReselledUserApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReselledUserApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetResellerUserIntroduced.info(
     queryParams,
     configOverride,
@@ -4295,7 +4439,9 @@ useGetResellerUserIntroduced.prefetch = (
 export const useGetResellerUserIntroducedFilterData = (
   options?: SwaggerTypescriptUseQueryOptions<ReselledUserFilterData>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReselledUserFilterData>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetResellerUserIntroducedFilterData.info(configOverride);
 
@@ -4335,7 +4481,12 @@ export const useGetResellerUserIntroducedUserIdActivity = (
   userId: string,
   options?: SwaggerTypescriptUseQueryOptions<ReselledUserActivityApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<ReselledUserActivityApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetResellerUserIntroducedUserIdActivity.info(
     userId,
     configOverride,
@@ -4383,7 +4534,9 @@ useGetResellerUserIntroducedUserIdActivity.prefetch = (
 export const useGetSubDomain = (
   options?: SwaggerTypescriptUseQueryOptions<SubDomainApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SubDomainApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubDomain.info(configOverride);
 
   return useQuery({
@@ -4424,7 +4577,9 @@ export const useGetSubDomainSubDomainAddress = (
   },
   options?: SwaggerTypescriptUseQueryOptions<SubDomainApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<SubDomainApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetSubDomainSubDomainAddress.info(
     subDomainAddress,
     headerParams,
@@ -4497,7 +4652,12 @@ useGetSubDomainSubDomainAddress.prefetch = (
 export const useGetSubUserConnection = (
   options?: SwaggerTypescriptUseQueryOptions<BusinessUserConnectionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<BusinessUserConnectionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubUserConnection.info(configOverride);
 
   return useQuery({
@@ -4531,7 +4691,9 @@ export const useGetTransaction = (
   queryParams?: GetTransactionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<TransactionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TransactionApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetTransaction.info(queryParams, configOverride);
 
   return useQuery({
@@ -4569,7 +4731,9 @@ export const useGetTransactionExcel = (
   queryParams?: GetTransactionExcelQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetTransactionExcel.info(queryParams, configOverride);
 
   return useQuery({
@@ -4612,7 +4776,9 @@ export const useGetTransactionReport = (
   queryParams?: GetTransactionReportQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<ReportApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ReportApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetTransactionReport.info(
     queryParams,
     configOverride,
@@ -4661,7 +4827,12 @@ export const useGetTransactionReportAll = (
   queryParams?: GetTransactionReportAllQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AllTransactionsReportApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<AllTransactionsReportApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTransactionReportAll.info(
     queryParams,
     configOverride,
@@ -4707,7 +4878,12 @@ export const useGetTransferRecent = (
   queryParams?: GetTransferRecentQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<TransferMoneyApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<TransferMoneyApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTransferRecent.info(queryParams, configOverride);
 
   return useQuery({
@@ -4745,7 +4921,9 @@ export const useGetTransferSearch = (
   queryParams?: GetTransferSearchQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AccountInfoApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountInfoApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetTransferSearch.info(queryParams, configOverride);
 
   return useQuery({
@@ -4786,7 +4964,12 @@ export const useGetTransferUserWalletIdCommission = (
   queryParams?: GetTransferUserWalletIdCommissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTransferUserWalletIdCommission.info(
     userWalletId,
     queryParams,
@@ -4844,7 +5027,9 @@ useGetTransferUserWalletIdCommission.prefetch = (
 export const useGetUser = (
   options?: SwaggerTypescriptUseQueryOptions<UserDetailQuery>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserDetailQuery>, RequestError | Error>
+> => {
   const { key, fun } = useGetUser.info(configOverride);
 
   return useQuery({
@@ -4879,7 +5064,9 @@ useGetUser.prefetch = (
 export const useGetUserBank = (
   options?: SwaggerTypescriptUseQueryOptions<UserBankApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserBankApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserBank.info(configOverride);
 
   return useQuery({
@@ -4914,7 +5101,9 @@ useGetUserBank.prefetch = (
 export const useGetUserBankReady = (
   options?: SwaggerTypescriptUseQueryOptions<UserBankApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserBankApiModel[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserBankReady.info(configOverride);
 
   return useQuery({
@@ -4949,7 +5138,12 @@ useGetUserBankReady.prefetch = (
 export const useGetUserConnection = (
   options?: SwaggerTypescriptUseQueryOptions<BusinessUserConnectionApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<BusinessUserConnectionApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserConnection.info(configOverride);
 
   return useQuery({
@@ -4983,7 +5177,9 @@ export const useGetUserContactInput = (
   input: string,
   options?: SwaggerTypescriptUseQueryOptions<ContactApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<ContactApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserContactInput.info(input, configOverride);
 
   return useQuery({
@@ -5025,7 +5221,12 @@ useGetUserContactInput.prefetch = (
 export const useGetUserIdentityRequest = (
   options?: SwaggerTypescriptUseQueryOptions<UserIdentityRequestQuery>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<UserIdentityRequestQuery>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserIdentityRequest.info(configOverride);
 
   return useQuery({
@@ -5060,7 +5261,12 @@ useGetUserIdentityRequest.prefetch = (
 export const useGetUserInvitation = (
   options?: SwaggerTypescriptUseQueryOptions<SubUserInvitationApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserInvitationApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserInvitation.info(configOverride);
 
   return useQuery({
@@ -5096,7 +5302,12 @@ export const useGetUserInvitationInvitationToken = (
   invitationToken: string,
   options?: SwaggerTypescriptUseQueryOptions<SubUserInvitationApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserInvitationApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserInvitationInvitationToken.info(
     invitationToken,
     configOverride,
@@ -5142,7 +5353,9 @@ useGetUserInvitationInvitationToken.prefetch = (
 export const useGetUserMe = (
   options?: SwaggerTypescriptUseQueryOptions<UserMeQuery>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserMeQuery>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserMe.info(configOverride);
 
   return useQuery({
@@ -5175,7 +5388,12 @@ useGetUserMe.prefetch = (
 export const useGetUserPlugin = (
   options?: SwaggerTypescriptUseQueryOptions<UserPluginDetailApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<UserPluginDetailApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserPlugin.info(configOverride);
 
   return useQuery({
@@ -5213,7 +5431,12 @@ useGetUserPlugin.prefetch = (
 export const useGetUserUpgradeToBusinessRequest = (
   options?: SwaggerTypescriptUseQueryOptions<UpgradeToBusinessApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<UpgradeToBusinessApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserUpgradeToBusinessRequest.info(configOverride);
 
   return useQuery({
@@ -5248,7 +5471,12 @@ useGetUserUpgradeToBusinessRequest.prefetch = (
 export const useGetUserWallet = (
   options?: SwaggerTypescriptUseQueryOptions<WalletDisplayApiModel[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<WalletDisplayApiModel[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserWallet.info(configOverride);
 
   return useQuery({
@@ -5283,7 +5511,9 @@ export const useGetUserWalletAccountNumberQrcode = (
   queryParams?: GetUserWalletAccountNumberQrcodeQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserWalletAccountNumberQrcode.info(
     accountNumber,
     queryParams,
@@ -5345,7 +5575,9 @@ export const useGetUserWalletSearch = (
   queryParams?: GetUserWalletSearchQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<AccountInfoApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountInfoApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserWalletSearch.info(queryParams, configOverride);
 
   return useQuery({
@@ -5385,7 +5617,9 @@ export const useGetUserWalletUserWalletIdBalance = (
   userWalletId: number,
   options?: SwaggerTypescriptUseQueryOptions<AccountBalanceApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<AccountBalanceApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserWalletUserWalletIdBalance.info(
     userWalletId,
     configOverride,
@@ -5435,7 +5669,12 @@ export const useGetUserWalletUserWalletIdEpayRequestComission = (
   queryParams?: GetUserWalletUserWalletIdEpayRequestComissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserWalletUserWalletIdEpayRequestComission.info(
     userWalletId,
     queryParams,
@@ -5492,7 +5731,12 @@ export const useGetUserWalletUserWalletIdPermittedsubusers = (
   userWalletId: number,
   options?: SwaggerTypescriptUseQueryOptions<AccountPermittedSubUserQuery[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<AccountPermittedSubUserQuery[]>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserWalletUserWalletIdPermittedsubusers.info(
     userWalletId,
     configOverride,
@@ -5541,7 +5785,12 @@ export const useGetUserWalletUserWalletIdSettlementRequestComission = (
   queryParams?: GetUserWalletUserWalletIdSettlementRequestComissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } =
     useGetUserWalletUserWalletIdSettlementRequestComission.info(
       userWalletId,
@@ -5606,7 +5855,12 @@ export const useGetUserWalletUserWalletIdTransferMoneyCommission = (
   queryParams?: GetUserWalletUserWalletIdTransferMoneyCommissionQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<CommissionAmountApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<CommissionAmountApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUserWalletUserWalletIdTransferMoneyCommission.info(
     userWalletId,
     queryParams,
@@ -5664,7 +5918,9 @@ useGetUserWalletUserWalletIdTransferMoneyCommission.prefetch = (
 export const useGetUserWorkspace = (
   options?: SwaggerTypescriptUseQueryOptions<UserWorkspaceQuery[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserWorkspaceQuery[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserWorkspace.info(configOverride);
 
   return useQuery({

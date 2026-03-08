@@ -322,7 +322,29 @@ function generateHookSignature(
 ): string {
   const generic = isQuery ? "" : "<TExtra>";
   const params = config.params.join(", ");
-  return `export const ${hookName} =${generic} (${params}) => {`;
+  const returnType = generateReturnType(config);
+  return `export const ${hookName} =${generic} (${params})${returnType} => {`;
+}
+
+/** Generate return type annotation for hook */
+function generateReturnType(config: any): string {
+  if (config.isSuspenseInfiniteQuery || config.isInfiniteQuery) {
+    // Infinite queries return custom object with list, hasMore, total
+    return "";
+  }
+  
+  if (config.isSuspenseQuery) {
+    // useSuspenseQuery returns UseSuspenseQueryResult
+    return `: ReturnType<typeof useSuspenseQuery<${config.TQueryFnData}, ${config.TError}>>`;
+  }
+  
+  if (config.isQuery) {
+    // useQuery returns UseQueryResult
+    return `: ReturnType<typeof useQuery<${config.TQueryFnData}, ${config.TError}>>`;
+  }
+  
+  // Mutations don't need explicit return type
+  return "";
 }
 
 /** Generate hook body */

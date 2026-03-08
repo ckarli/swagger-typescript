@@ -246,7 +246,9 @@ export const useGetPetFindByStatus = (
   queryParams: GetPetFindByStatusQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Pet[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Pet[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetPetFindByStatus.info(queryParams, configOverride);
 
   return useQuery({
@@ -286,7 +288,9 @@ export const useGetPetFindByTags = (
   queryParams: GetPetFindByTagsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<Pet[]>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Pet[]>, RequestError | Error>
+> => {
   const { key, fun } = useGetPetFindByTags.info(queryParams, configOverride);
 
   return useQuery({
@@ -327,7 +331,7 @@ export const useGetPetPetId = (
   petId: number,
   options?: SwaggerTypescriptUseQueryOptions<Pet>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<Pet>, RequestError | Error>> => {
   const { key, fun } = useGetPetPetId.info(petId, configOverride);
 
   return useQuery({
@@ -369,7 +373,12 @@ useGetPetPetId.prefetch = (
 export const useGetStoreInventory = (
   options?: SwaggerTypescriptUseQueryOptions<{ [x: string]: number }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ [x: string]: number }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetStoreInventory.info(configOverride);
 
   return useQuery({
@@ -406,7 +415,9 @@ export const useGetStoreOrderOrderId = (
   orderId: number,
   options?: SwaggerTypescriptUseQueryOptions<Order>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<Order>, RequestError | Error>
+> => {
   const { key, fun } = useGetStoreOrderOrderId.info(orderId, configOverride);
 
   return useQuery({
@@ -449,7 +460,9 @@ export const useGetUserLogin = (
   queryParams?: GetUserLoginQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<string>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<string>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserLogin.info(queryParams, configOverride);
 
   return useQuery({
@@ -488,7 +501,7 @@ useGetUserLogin.prefetch = (
 export const useGetUserLogout = (
   options?: SwaggerTypescriptUseQueryOptions<any>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<any>, RequestError | Error>> => {
   const { key, fun } = useGetUserLogout.info(configOverride);
 
   return useQuery({
@@ -525,7 +538,7 @@ export const useGetUserUsername = (
   username: string,
   options?: SwaggerTypescriptUseQueryOptions<User>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<typeof useQuery<SwaggerResponse<User>, RequestError | Error>> => {
   const { key, fun } = useGetUserUsername.info(username, configOverride);
 
   return useQuery({
