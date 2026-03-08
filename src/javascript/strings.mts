@@ -88,25 +88,25 @@ const getHooksImports = ({
 ${hasInfinity || hasSuspenseInfinity ? `import { useMemo } from "react";` : ""}
 import { AxiosRequestConfig } from "axios";
 import {
-  UseQueryOptions,
-  useQuery,
+  ${hasSuspense || hasSuspenseInfinity ? 'UseSuspenseQueryOptions,' : ''}
+  ${hasInfinity || (!hasSuspense && !hasSuspenseInfinity) ? 'UseQueryOptions,' : ''}
+  ${(!hasSuspense && !hasSuspenseInfinity) || hasInfinity ? 'useQuery,' : ''}
   useMutation,
   UseMutationOptions,
   ${
     hasInfinity
-      ? `  useInfiniteQuery,
+      ? `useInfiniteQuery,
   UseInfiniteQueryOptions,`
       : ""
   }
   ${
     hasSuspense
-      ? `  useSuspenseQuery,
-  UseSuspenseQueryOptions,`
+      ? `useSuspenseQuery,`
       : ""
   }
   ${
     hasSuspenseInfinity
-      ? `  useSuspenseInfiniteQuery,
+      ? `useSuspenseInfiniteQuery,
   UseSuspenseInfiniteQueryOptions,`
       : ""
   }

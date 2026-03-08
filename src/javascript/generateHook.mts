@@ -512,15 +512,17 @@ function buildFinalCode(
 ): string {
   const useSuspense = !!context.config.createSuspenseHooks;
   
-  // Determine if we have any queries (for suspense imports)
-  const hasQueries = apis.some(api => {
+  // Determine if we have regular queries (non-infinite)
+  const hasRegularQueries = apis.some(api => {
     const hookName = `use${toPascalCase(api.serviceName)}`;
-    return shouldUseInfiniteQuery(api, hookName, context) || shouldUseQuery(api, hookName, context);
+    const isInfinite = shouldUseInfiniteQuery(api, hookName, context);
+    const isQuery = shouldUseQuery(api, hookName, context);
+    return isQuery && !isInfinite;
   });
 
   let code = getHooksImports({ 
     hasInfinity: context.hasInfiniteQuery && !useSuspense,
-    hasSuspense: useSuspense && hasQueries && !context.hasInfiniteQuery && !context.hasSuspenseInfiniteQuery,
+    hasSuspense: useSuspense && hasRegularQueries,
     hasSuspenseInfinity: context.hasSuspenseInfiniteQuery
   });
 

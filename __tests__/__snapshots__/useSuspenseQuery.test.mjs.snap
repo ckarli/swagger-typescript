@@ -11,10 +11,10 @@ exports[`useSuspenseQuery should generate useSuspenseInfiniteQuery for infinite 
 import { useMemo } from \\"react\\";
 import { AxiosRequestConfig } from \\"axios\\";
 import {
-  UseQueryOptions,
-  useQuery,
+  UseSuspenseQueryOptions,
   useMutation,
   UseMutationOptions,
+  useSuspenseQuery,
   useSuspenseInfiniteQuery,
   UseSuspenseInfiniteQueryOptions,
   QueryClient,
@@ -229,12 +229,10 @@ exports[`useSuspenseQuery should generate useSuspenseQuery hooks when createSusp
 
 import { AxiosRequestConfig } from \\"axios\\";
 import {
-  UseQueryOptions,
-  useQuery,
+  UseSuspenseQueryOptions,
   useMutation,
   UseMutationOptions,
   useSuspenseQuery,
-  UseSuspenseQueryOptions,
   QueryClient,
   QueryKey,
 } from \\"@tanstack/react-query\\";
