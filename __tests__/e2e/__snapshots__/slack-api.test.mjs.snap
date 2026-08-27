@@ -467,7 +467,9 @@ export const useGetAdminAppsApprovedList = (
   queryParams: GetAdminAppsApprovedListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminAppsApprovedList.info(
     queryParams,
     configOverride,
@@ -511,7 +513,9 @@ export const useGetAdminAppsRequestsList = (
   queryParams: GetAdminAppsRequestsListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminAppsRequestsList.info(
     queryParams,
     configOverride,
@@ -555,7 +559,9 @@ export const useGetAdminAppsRestrictedList = (
   queryParams: GetAdminAppsRestrictedListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminAppsRestrictedList.info(
     queryParams,
     configOverride,
@@ -599,7 +605,9 @@ export const useGetAdminConversationsEkmListOriginalConnectedChannelInfo = (
   queryParams: GetAdminConversationsEkmListOriginalConnectedChannelInfoQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } =
     useGetAdminConversationsEkmListOriginalConnectedChannelInfo.info(
       queryParams,
@@ -659,7 +667,18 @@ export const useGetAdminConversationsGetConversationPrefs = (
     };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      prefs?: {
+        can_thread?: { type?: string[]; user?: string[] };
+        who_can_post?: { type?: string[]; user?: string[] };
+      };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAdminConversationsGetConversationPrefs.info(
     queryParams,
     headerParams,
@@ -727,7 +746,16 @@ export const useGetAdminConversationsGetTeams = (
     response_metadata?: { next_cursor: string };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      team_ids: Defs_team[];
+      response_metadata?: { next_cursor: string };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAdminConversationsGetTeams.info(
     queryParams,
     headerParams,
@@ -784,7 +812,9 @@ export const useGetAdminConversationsRestrictAccessListGroups = (
   queryParams: GetAdminConversationsRestrictAccessListGroupsQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminConversationsRestrictAccessListGroups.info(
     queryParams,
     configOverride,
@@ -839,7 +869,12 @@ export const useGetAdminConversationsSearch = (
     next_cursor: string;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ channels: Objs_channel[]; next_cursor: string }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAdminConversationsSearch.info(
     queryParams,
     headerParams,
@@ -895,7 +930,9 @@ export const useGetAdminEmojiList = (
   queryParams: GetAdminEmojiListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminEmojiList.info(queryParams, configOverride);
 
   return useQuery({
@@ -934,7 +971,9 @@ export const useGetAdminInviteRequestsApprovedList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminInviteRequestsApprovedList.info(
     queryParams,
     headerParams,
@@ -992,7 +1031,9 @@ export const useGetAdminInviteRequestsDeniedList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminInviteRequestsDeniedList.info(
     queryParams,
     headerParams,
@@ -1050,7 +1091,9 @@ export const useGetAdminInviteRequestsList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminInviteRequestsList.info(
     queryParams,
     headerParams,
@@ -1103,7 +1146,9 @@ export const useGetAdminTeamsAdminsList = (
   queryParams: GetAdminTeamsAdminsListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminTeamsAdminsList.info(
     queryParams,
     configOverride,
@@ -1148,7 +1193,9 @@ export const useGetAdminTeamsList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminTeamsList.info(
     queryParams,
     headerParams,
@@ -1196,7 +1243,9 @@ export const useGetAdminTeamsOwnersList = (
   queryParams: GetAdminTeamsOwnersListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminTeamsOwnersList.info(
     queryParams,
     configOverride,
@@ -1241,7 +1290,9 @@ export const useGetAdminTeamsSettingsInfo = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminTeamsSettingsInfo.info(
     queryParams,
     headerParams,
@@ -1291,7 +1342,9 @@ export const useGetAdminUsergroupsListChannels = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminUsergroupsListChannels.info(
     queryParams,
     headerParams,
@@ -1345,7 +1398,9 @@ export const useGetAdminUsersList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAdminUsersList.info(
     queryParams,
     headerParams,
@@ -1393,7 +1448,9 @@ export const useGetApiTest = (
   queryParams?: GetApiTestQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetApiTest.info(queryParams, configOverride);
 
   return useQuery({
@@ -1432,7 +1489,9 @@ export const useGetAppsEventAuthorizationsList = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAppsEventAuthorizationsList.info(
     queryParams,
     headerParams,
@@ -1495,7 +1554,22 @@ export const useGetAppsPermissionsInfo = (
     ok: Defs_ok_true;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      info: {
+        app_home: { resources?: Objs_resources; scopes?: Objs_scopes };
+        channel: { resources?: Objs_resources; scopes?: Objs_scopes };
+        group: { resources?: Objs_resources; scopes?: Objs_scopes };
+        im: { resources?: Objs_resources; scopes?: Objs_scopes };
+        mpim: { resources?: Objs_resources; scopes?: Objs_scopes };
+        team: { resources: Objs_resources; scopes: Objs_scopes };
+      };
+      ok: Defs_ok_true;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAppsPermissionsInfo.info(
     queryParams,
     configOverride,
@@ -1549,7 +1623,9 @@ export const useGetAppsPermissionsRequest = (
   queryParams: GetAppsPermissionsRequestQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAppsPermissionsRequest.info(
     queryParams,
     configOverride,
@@ -1602,7 +1678,21 @@ export const useGetAppsPermissionsResourcesList = (
     response_metadata?: { next_cursor: string };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      resources: {
+        /** An ID for a resource */
+        id?: string;
+        /** The type of resource the \`id\` corresponds to */
+        type?: string;
+      }[];
+      response_metadata?: { next_cursor: string };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAppsPermissionsResourcesList.info(
     queryParams,
     configOverride,
@@ -1666,7 +1756,23 @@ export const useGetAppsPermissionsScopesList = (
     };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      scopes: {
+        app_home?: Objs_scopes;
+        channel?: Objs_scopes;
+        group?: Objs_scopes;
+        im?: Objs_scopes;
+        mpim?: Objs_scopes;
+        team?: Objs_scopes;
+        user?: Objs_scopes;
+      };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAppsPermissionsScopesList.info(
     queryParams,
     configOverride,
@@ -1721,7 +1827,9 @@ export const useGetAppsPermissionsUsersList = (
   queryParams: GetAppsPermissionsUsersListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAppsPermissionsUsersList.info(
     queryParams,
     configOverride,
@@ -1765,7 +1873,9 @@ export const useGetAppsPermissionsUsersRequest = (
   queryParams: GetAppsPermissionsUsersRequestQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAppsPermissionsUsersRequest.info(
     queryParams,
     configOverride,
@@ -1809,7 +1919,9 @@ export const useGetAppsUninstall = (
   queryParams?: GetAppsUninstallQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetAppsUninstall.info(queryParams, configOverride);
 
   return useQuery({
@@ -1850,7 +1962,12 @@ export const useGetAuthRevoke = (
     revoked: boolean;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; revoked: boolean }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAuthRevoke.info(queryParams, configOverride);
 
   return useQuery({
@@ -1900,7 +2017,21 @@ export const useGetAuthTest = (
     is_enterprise_install?: boolean;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      team: string;
+      team_id: Defs_team;
+      url: string;
+      user: string;
+      user_id: Defs_user_id;
+      bot_id?: Defs_bot_id;
+      is_enterprise_install?: boolean;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetAuthTest.info(headerParams, configOverride);
 
   return useQuery({
@@ -1965,7 +2096,30 @@ export const useGetBotsInfo = (
     ok: Defs_ok_true;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      bot: {
+        app_id: Defs_app_id;
+        deleted: boolean;
+        icons: {
+          /** - Format: uri */
+          image_36: string;
+          /** - Format: uri */
+          image_48: string;
+          /** - Format: uri */
+          image_72: string;
+        };
+        id: Defs_bot_id;
+        name: string;
+        updated: number;
+        user_id?: Defs_user_id;
+      };
+      ok: Defs_ok_true;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBotsInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -2022,7 +2176,9 @@ export const useGetCallsInfo = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetCallsInfo.info(
     queryParams,
     headerParams,
@@ -2075,7 +2231,17 @@ export const useGetChatGetPermalink = (
     permalink: string;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      channel: Defs_channel;
+      ok: Defs_ok_true;
+      /** - Format: uri */
+      permalink: string;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetChatGetPermalink.info(queryParams, configOverride);
 
   return useQuery({
@@ -2132,7 +2298,25 @@ export const useGetChatScheduledMessagesList = (
     }[];
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      response_metadata: { next_cursor: string };
+      scheduled_messages: {
+        channel_id: Defs_channel_id;
+        /** - Pattern: ^\\\\d{10}$ */
+        date_created: number;
+        /** - Pattern: ^[Q][A-Z0-9]{8,}$ */
+        id: string;
+        /** - Pattern: ^\\\\d{10}$ */
+        post_at: number;
+        text?: string;
+      }[];
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetChatScheduledMessagesList.info(
     queryParams,
     headerParams,
@@ -2205,7 +2389,19 @@ export const useGetConversationsHistory = (
     pin_count: number;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      channel_actions_count: number;
+      channel_actions_ts: (number | null)[];
+      has_more: boolean;
+      messages: Objs_message[];
+      ok: Defs_ok_true;
+      pin_count: number;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetConversationsHistory.info(
     queryParams,
     configOverride,
@@ -2259,7 +2455,12 @@ export const useGetConversationsInfo = (
     ok: Defs_ok_true;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ channel: Objs_conversation; ok: Defs_ok_true }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetConversationsInfo.info(
     queryParams,
     configOverride,
@@ -2310,7 +2511,16 @@ export const useGetConversationsList = (
     response_metadata?: { next_cursor: string };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      channels: Objs_conversation[];
+      ok: Defs_ok_true;
+      response_metadata?: { next_cursor: string };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetConversationsList.info(
     queryParams,
     configOverride,
@@ -2362,7 +2572,16 @@ export const useGetConversationsMembers = (
     response_metadata: { next_cursor: string };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      members: Defs_user_id[];
+      ok: Defs_ok_true;
+      response_metadata: { next_cursor: string };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetConversationsMembers.info(
     queryParams,
     configOverride,
@@ -2446,7 +2665,48 @@ export const useGetConversationsReplies = (
     has_more?: boolean;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      messages: (
+        | {
+            reply_count: number;
+            subscribed: boolean;
+            text: string;
+            thread_ts: Defs_ts;
+            ts: Defs_ts;
+            type: string;
+            user: Defs_user_id;
+            last_read?: Defs_ts;
+            latest_reply?: Defs_ts;
+            reply_users?: Defs_user_id[];
+            reply_users_count?: number;
+            source_team?: Defs_team;
+            team?: Defs_team;
+            unread_count?: number;
+            user_profile?: Objs_user_profile_short;
+            user_team?: Defs_team;
+          }
+        | {
+            parent_user_id: Defs_user_id;
+            text: string;
+            thread_ts: Defs_ts;
+            ts: Defs_ts;
+            type: string;
+            user: Defs_user_id;
+            is_starred?: boolean;
+            source_team?: Defs_team;
+            team?: Defs_team;
+            user_profile?: Objs_user_profile_short;
+            user_team?: Defs_team;
+          }
+      )[][];
+      ok: Defs_ok_true;
+      has_more?: boolean;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetConversationsReplies.info(
     queryParams,
     configOverride,
@@ -2527,7 +2787,9 @@ export const useGetDialogOpen = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetDialogOpen.info(
     queryParams,
     headerParams,
@@ -2583,7 +2845,20 @@ export const useGetDndInfo = (
     snooze_remaining?: number;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      dnd_enabled: boolean;
+      next_dnd_end_ts: number;
+      next_dnd_start_ts: number;
+      ok: Defs_ok_true;
+      snooze_enabled?: boolean;
+      snooze_endtime?: number;
+      snooze_remaining?: number;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetDndInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -2629,7 +2904,9 @@ export const useGetDndTeamInfo = (
   queryParams?: GetDndTeamInfoQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetDndTeamInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -2667,7 +2944,9 @@ export const useGetEmojiList = (
   queryParams: GetEmojiListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetEmojiList.info(queryParams, configOverride);
 
   return useQuery({
@@ -2713,7 +2992,20 @@ export const useGetFilesInfo = (
     response_metadata?: Objs_response_metadata;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      comments: Objs_comments;
+      file: Objs_file;
+      ok: Defs_ok_true;
+      content_html?: null;
+      editor?: Defs_user_id;
+      paging?: Objs_paging;
+      response_metadata?: Objs_response_metadata;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFilesInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -2763,7 +3055,16 @@ export const useGetFilesList = (
     paging: Objs_paging;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      files: Objs_file[];
+      ok: Defs_ok_true;
+      paging: Objs_paging;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetFilesList.info(queryParams, configOverride);
 
   return useQuery({
@@ -2805,7 +3106,9 @@ export const useGetFilesRemoteInfo = (
   queryParams?: GetFilesRemoteInfoQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetFilesRemoteInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -2843,7 +3146,9 @@ export const useGetFilesRemoteList = (
   queryParams?: GetFilesRemoteListQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetFilesRemoteList.info(queryParams, configOverride);
 
   return useQuery({
@@ -2881,7 +3186,9 @@ export const useGetFilesRemoteShare = (
   queryParams?: GetFilesRemoteShareQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetFilesRemoteShare.info(queryParams, configOverride);
 
   return useQuery({
@@ -2928,7 +3235,21 @@ export const useGetMigrationExchange = (
     user_id_map?: { [x: string]: any };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      /** The enterprise grid organization ID containing the workspace/team. */
+      enterprise_id: string;
+      ok: Defs_ok_true;
+      team_id: Defs_team;
+      /** A list of User IDs that cannot be mapped or found */
+      invalid_user_ids?: string[];
+      /** A mapping of provided user IDs with mapped user IDs */
+      user_id_map?: { [x: string]: any };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetMigrationExchange.info(
     queryParams,
     configOverride,
@@ -2981,7 +3302,9 @@ export const useGetOauthAccess = (
   queryParams?: GetOauthAccessQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetOauthAccess.info(queryParams, configOverride);
 
   return useQuery({
@@ -3019,7 +3342,9 @@ export const useGetOauthToken = (
   queryParams?: GetOauthTokenQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetOauthToken.info(queryParams, configOverride);
 
   return useQuery({
@@ -3057,7 +3382,9 @@ export const useGetOauthV2Access = (
   queryParams: GetOauthV2AccessQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetOauthV2Access.info(queryParams, configOverride);
 
   return useQuery({
@@ -3117,7 +3444,34 @@ export const useGetPinsList = (
     )[]
   >,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<
+      (
+        | {
+            items: (
+              | {
+                  created?: number;
+                  created_by?: Defs_user_id;
+                  file?: Objs_file;
+                  type?: \\"file\\";
+                }
+              | {
+                  channel?: Defs_channel;
+                  created?: number;
+                  created_by?: Defs_user_id;
+                  message?: Objs_message;
+                  type?: \\"message\\";
+                }
+            )[];
+            ok: Defs_ok_true;
+          }
+        | { count: number; ok: Defs_ok_true }
+      )[]
+    >,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetPinsList.info(queryParams, configOverride);
 
   return useQuery({
@@ -3193,7 +3547,28 @@ export const useGetReactionsGet = (
     )[]
   >,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<
+      (
+        | {
+            channel: Defs_channel;
+            message: Objs_message;
+            ok: Defs_ok_true;
+            type: \\"message\\";
+          }
+        | { file: Objs_file; ok: Defs_ok_true; type: \\"file\\" }
+        | {
+            comment: Objs_comment;
+            file: Objs_file;
+            ok: Defs_ok_true;
+            type: \\"file_comment\\";
+          }
+      )[]
+    >,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetReactionsGet.info(queryParams, configOverride);
 
   return useQuery({
@@ -3256,7 +3631,21 @@ export const useGetReactionsList = (
     response_metadata?: Objs_response_metadata;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      items: (
+        | { channel: Defs_channel; message: Objs_message; type: \\"message\\" }
+        | { file: Objs_file; type: \\"file\\" }
+        | { comment: Objs_comment; file: Objs_file; type: \\"file_comment\\" }
+      )[][];
+      ok: Defs_ok_true;
+      paging?: Objs_paging;
+      response_metadata?: Objs_response_metadata;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetReactionsList.info(queryParams, configOverride);
 
   return useQuery({
@@ -3306,7 +3695,12 @@ export const useGetRemindersInfo = (
     reminder: Objs_reminder;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; reminder: Objs_reminder }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetRemindersInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -3350,7 +3744,12 @@ export const useGetRemindersList = (
     reminders: Objs_reminder[];
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; reminders: Objs_reminder[] }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetRemindersList.info(queryParams, configOverride);
 
   return useQuery({
@@ -3397,7 +3796,18 @@ export const useGetRtmConnect = (
     url: string;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      self: { id: Defs_user_id; name: string };
+      team: { domain: string; id: Defs_team; name: string };
+      /** - Format: uri */
+      url: string;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetRtmConnect.info(queryParams, configOverride);
 
   return useQuery({
@@ -3441,7 +3851,9 @@ export const useGetSearchMessages = (
   queryParams: GetSearchMessagesQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetSearchMessages.info(queryParams, configOverride);
 
   return useQuery({
@@ -3500,7 +3912,33 @@ export const useGetStarsList = (
     paging?: Objs_paging;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      items: (
+        | {
+            channel: Defs_channel;
+            date_create: number;
+            message: Objs_message;
+            type: \\"message\\";
+          }
+        | { date_create: number; file: Objs_file; type: \\"file\\" }
+        | {
+            comment: Objs_comment;
+            date_create: number;
+            file: Objs_file;
+            type: \\"file_comment\\";
+          }
+        | { channel: Defs_channel; date_create: number; type: \\"channel\\" }
+        | { channel: Defs_dm_id; date_create: number; type: \\"im\\" }
+        | { channel: Defs_group_id; date_create: number; type: \\"group\\" }
+      )[][];
+      ok: Defs_ok_true;
+      paging?: Objs_paging;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetStarsList.info(queryParams, configOverride);
 
   return useQuery({
@@ -3574,7 +4012,27 @@ export const useGetTeamAccessLogs = (
     paging: Objs_paging;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      logins: {
+        count: number;
+        date_first: number;
+        date_last: number;
+        user_agent: string;
+        user_id: Defs_user_id;
+        username: string;
+        country?: string;
+        ip?: string;
+        isp?: string;
+        region?: string;
+      }[];
+      ok: Defs_ok_true;
+      paging: Objs_paging;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTeamAccessLogs.info(queryParams, configOverride);
 
   return useQuery({
@@ -3627,7 +4085,9 @@ export const useGetTeamBillableInfo = (
   queryParams: GetTeamBillableInfoQueryParams,
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetTeamBillableInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -3668,7 +4128,12 @@ export const useGetTeamInfo = (
     team: Objs_team;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; team: Objs_team }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTeamInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -3725,7 +4190,28 @@ export const useGetTeamIntegrationLogs = (
     paging: Objs_paging;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      logs: {
+        app_id: Defs_app_id;
+        app_type: string;
+        change_type: string;
+        date: string;
+        scope: string;
+        user_id: Defs_user_id;
+        user_name: string;
+        admin_app_id?: Defs_app_id;
+        channel?: Defs_channel;
+        service_id?: string;
+        service_type?: string;
+      }[];
+      ok: Defs_ok_true;
+      paging: Objs_paging;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTeamIntegrationLogs.info(
     queryParams,
     configOverride,
@@ -3788,7 +4274,15 @@ export const useGetTeamProfileGet = (
     profile: { fields: Objs_team_profile_field[] };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      profile: { fields: Objs_team_profile_field[] };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetTeamProfileGet.info(queryParams, configOverride);
 
   return useQuery({
@@ -3832,7 +4326,12 @@ export const useGetUsergroupsList = (
     usergroups: Objs_subteam[];
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; usergroups: Objs_subteam[] }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsergroupsList.info(queryParams, configOverride);
 
   return useQuery({
@@ -3876,7 +4375,12 @@ export const useGetUsergroupsUsersList = (
     users: Defs_user_id[];
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; users: Defs_user_id[] }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsergroupsUsersList.info(
     queryParams,
     configOverride,
@@ -3927,7 +4431,16 @@ export const useGetUsersConversations = (
     response_metadata?: { next_cursor: string };
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      channels: Objs_conversation[];
+      ok: Defs_ok_true;
+      response_metadata?: { next_cursor: string };
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersConversations.info(
     queryParams,
     configOverride,
@@ -3983,7 +4496,20 @@ export const useGetUsersGetPresence = (
     online?: boolean;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      ok: Defs_ok_true;
+      presence: string;
+      auto_away?: boolean;
+      connection_count?: number;
+      last_activity?: number;
+      manual_away?: boolean;
+      online?: boolean;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersGetPresence.info(queryParams, configOverride);
 
   return useQuery({
@@ -4091,7 +4617,74 @@ export const useGetUsersIdentity = (
     )[]
   >,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<
+      (
+        | {
+            ok: Defs_ok_true;
+            team: { id: Defs_team };
+            user: { id: Defs_user_id; name: string };
+          }
+        | {
+            ok: Defs_ok_true;
+            team: { id: Defs_team };
+            user: {
+              /** - Format: email */
+              email: string;
+              id: Defs_user_id;
+              name: string;
+            };
+          }
+        | {
+            ok: Defs_ok_true;
+            team: { id: Defs_team };
+            user: {
+              id: Defs_user_id;
+              /** - Format: url */
+              image_192: string;
+              /** - Format: url */
+              image_24: string;
+              /** - Format: url */
+              image_32: string;
+              /** - Format: url */
+              image_48: string;
+              /** - Format: url */
+              image_512: string;
+              /** - Format: url */
+              image_72: string;
+              name: string;
+            };
+          }
+        | {
+            ok: Defs_ok_true;
+            team: {
+              domain: string;
+              id: Defs_team;
+              /** - Format: url */
+              image_102: string;
+              /** - Format: url */
+              image_132: string;
+              /** - Format: url */
+              image_230: string;
+              /** - Format: url */
+              image_34: string;
+              /** - Format: url */
+              image_44: string;
+              /** - Format: url */
+              image_68: string;
+              /** - Format: url */
+              image_88: string;
+              image_default: boolean;
+              name: string;
+            };
+            user: { id: Defs_user_id; name: string };
+          }
+      )[]
+    >,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersIdentity.info(queryParams, configOverride);
 
   return useQuery({
@@ -4194,7 +4787,12 @@ export const useGetUsersInfo = (
     user: Objs_user;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; user: Objs_user }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersInfo.info(queryParams, configOverride);
 
   return useQuery({
@@ -4240,7 +4838,17 @@ export const useGetUsersList = (
     response_metadata?: Objs_response_metadata;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{
+      cache_ts: number;
+      members: Objs_user[];
+      ok: Defs_ok_true;
+      response_metadata?: Objs_response_metadata;
+    }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersList.info(queryParams, configOverride);
 
   return useQuery({
@@ -4286,7 +4894,12 @@ export const useGetUsersLookupByEmail = (
     user: Objs_user;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; user: Objs_user }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersLookupByEmail.info(
     queryParams,
     configOverride,
@@ -4336,7 +4949,12 @@ export const useGetUsersProfileGet = (
     profile: Objs_user_profile;
   }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<{ ok: Defs_ok_true; profile: Objs_user_profile }>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetUsersProfileGet.info(queryParams, configOverride);
 
   return useQuery({
@@ -4378,7 +4996,9 @@ export const useGetViewsOpen = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetViewsOpen.info(
     queryParams,
     headerParams,
@@ -4427,7 +5047,9 @@ export const useGetViewsPublish = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetViewsPublish.info(
     queryParams,
     headerParams,
@@ -4476,7 +5098,9 @@ export const useGetViewsPush = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetViewsPush.info(
     queryParams,
     headerParams,
@@ -4525,7 +5149,9 @@ export const useGetViewsUpdate = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetViewsUpdate.info(
     queryParams,
     headerParams,
@@ -4574,7 +5200,9 @@ export const useGetWorkflowsStepCompleted = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetWorkflowsStepCompleted.info(
     queryParams,
     headerParams,
@@ -4624,7 +5252,9 @@ export const useGetWorkflowsStepFailed = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetWorkflowsStepFailed.info(
     queryParams,
     headerParams,
@@ -4674,7 +5304,9 @@ export const useGetWorkflowsUpdateStep = (
   headerParams?: { token: string },
   options?: SwaggerTypescriptUseQueryOptions<{ ok: Defs_ok_true }>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<{ ok: Defs_ok_true }>, RequestError | Error>
+> => {
   const { key, fun } = useGetWorkflowsUpdateStep.info(
     queryParams,
     headerParams,

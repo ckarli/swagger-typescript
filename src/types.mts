@@ -267,6 +267,7 @@ export interface FileConfig {
   excludes?: string[];
   useQuery?: string[];
   useInfiniteQuery?: string[];
+  createSuspenseHooks?: boolean;
   mock?: string;
   prettierPath?: string;
   language?: "javascript" | "typescript" | "kotlin";

@@ -750,7 +750,12 @@ export const useGetBusinessUserConnectionConnectionId = (
   connectionId: number,
   options?: SwaggerTypescriptUseQueryOptions<SubUserConnectionApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserConnectionApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetBusinessUserConnectionConnectionId.info(
     connectionId,
     configOverride,
@@ -801,7 +806,12 @@ export const useGetEpayRequestEpayId = (
   epayId: number,
   options?: SwaggerTypescriptUseQueryOptions<EpayRequestDetailApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<EpayRequestDetailApiModel>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetEpayRequestEpayId.info(epayId, configOverride);
 
   return useQuery({
@@ -842,7 +852,9 @@ export const useGetPluginPluginId = (
   pluginId: number,
   options?: SwaggerTypescriptUseQueryOptions<PluginApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<PluginApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetPluginPluginId.info(pluginId, configOverride);
 
   return useQuery({
@@ -883,7 +895,9 @@ export const useGetReceiptBankEpayTryId = (
   epayTryId: string,
   options?: SwaggerTypescriptUseQueryOptions<BankReceiptApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<BankReceiptApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetReceiptBankEpayTryId.info(
     epayTryId,
     configOverride,
@@ -932,7 +946,12 @@ export const useGetSubUserAccountUserWalletId = (
   userWalletId: number,
   options?: SwaggerTypescriptUseQueryOptions<SubUserAccountDetailQuery>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<
+    SwaggerResponse<SubUserAccountDetailQuery>,
+    RequestError | Error
+  >
+> => {
   const { key, fun } = useGetSubUserAccountUserWalletId.info(
     userWalletId,
     configOverride,
@@ -978,7 +997,9 @@ export const useGetTransactionTransactionId = (
   transactionId: number,
   options?: SwaggerTypescriptUseQueryOptions<TransactionApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<TransactionApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetTransactionTransactionId.info(
     transactionId,
     configOverride,
@@ -1025,7 +1046,9 @@ export const useGetUserBankUserBankId = (
   userBankId: number,
   options?: SwaggerTypescriptUseQueryOptions<UserBankDetailApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<UserBankDetailApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserBankUserBankId.info(
     userBankId,
     configOverride,
@@ -1072,7 +1095,9 @@ export const useGetUserWalletUserWalletId = (
   userWalletId: number,
   options?: SwaggerTypescriptUseQueryOptions<WalletDetailApiModel>,
   configOverride?: AxiosRequestConfig,
-) => {
+): ReturnType<
+  typeof useQuery<SwaggerResponse<WalletDetailApiModel>, RequestError | Error>
+> => {
   const { key, fun } = useGetUserWalletUserWalletId.info(
     userWalletId,
     configOverride,
