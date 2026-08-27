@@ -1,4 +1,4 @@
-import { writeFileSync, existsSync, readFileSync, rmdirSync } from "fs";
+import { writeFileSync, existsSync, readFileSync, rmSync } from "fs";
 import { format } from "prettier";
 import { SwaggerJson, Config } from "../types.mjs";
 import { generator } from "./generator.mjs";
@@ -202,7 +202,7 @@ function convertTsToJs(dir: string, files: string[]) {
   files.forEach((file) => {
     const tsFile = `${dir}/${file}.ts`;
     if (existsSync(tsFile)) {
-      rmdirSync(tsFile, { recursive: true });
+      rmSync(tsFile, { recursive: true, force: true });
     }
   });
 }
